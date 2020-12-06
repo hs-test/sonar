@@ -1,0 +1,60 @@
+/* Notifications section
+================================ */
+.notification {
+    &__wrapper {
+        width : $viewportSize;
+        h1 {
+           @include text-md($letter-spacing: 0.2px, $font-weight: $w600, $font-multiplier: 1.15);
+           background: darken($white, 6.5%) none repeat scroll 0 0;
+           @include padding (15px); 
+           
+           span {
+               background: $green;
+               @include padding (0px 10px); 
+               border-radius: 15px;
+               display: inline-block;
+               color: $white; 
+               font-size: 12px; 
+           }
+        }
+        
+        ul li {
+            @include padding(15px); 
+            background: $white none repeat scroll 0 0;
+            + li {
+                border-top: 1px solid $border;
+            }
+            &:nth-child(even) {
+                background: darken($white, 6.5%) none repeat scroll 0 0;
+            }
+            float: left;
+            .userImage {
+                @include size(40px);
+                margin-right: 20px;
+                float: left;
+                img {
+                    @include size(#{viewportSize});
+                }
+            }
+            .content {
+                width: calc(#{$viewportSize} - 60px);
+                float: left;
+                h2 {
+                    @include text-md($font-multiplier: 1.1429, $font-weight: bold);
+                    margin-bottom: 8px;
+                }
+                .status {
+                    &:before {
+                        content: '\f111'; 
+                        font-family: $iconfont; 
+                        margin-right: 10px;
+                        @include text-md($font-multiplier: 0.6429, $line-height: 1);
+                        color: #ffb803;
+                        float: left;
+                        margin-top: 6px;
+                    }
+                }
+            }
+        }
+    }
+}

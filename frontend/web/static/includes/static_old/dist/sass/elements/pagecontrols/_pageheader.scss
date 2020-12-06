@@ -1,0 +1,130 @@
+/* Page Header section
+================================ */
+
+.pageHeader {
+    width: $viewportSize;
+    height: 60px;
+    padding: 0px;
+    color: $white;
+    margin: 0px auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: 10;
+    @include transition(all 0.2s ease-out);
+    @include transition(margin 0.3s ease 0s);
+    /* background-image: url("../images/header_Bg.svg"); */
+    background-color: $themeBlue;
+    @include background-size(cover);
+    position: relative;
+    &__inner {
+        height: $viewportSize;
+        @include padding(10px 30px 10px 70px);
+        @media #{$media-ipadPortrait} {
+            @include padding(10px 20px 10px 60px);
+        }
+        
+        &-logo {
+            float: left;
+            max-width: 300px;
+            margin-left: 0px;
+            margin-top: 0px;
+            margin-bottom: 0px;
+            @include transition(all 0.2s ease-out);
+            position: absolute;
+            top: 50%;
+            @include translate(0,-50%);
+            a {
+                display: block;
+                @include text-md($color: $white, $line-height: 1, $font-multiplier: 1.0715, $letter-spacing: normal);
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                font-family: $montserratregular;
+                text-transform: uppercase;
+                > img {
+                    max-width: $viewportSize;
+                    display: block;
+                }
+            }
+            @media #{$media-iPad} {
+                max-width: 280px;
+            }
+            @media #{$media-phone} {
+                max-width: 120px;
+            }
+        }
+        &-top-menu {
+           float: right;
+           li {
+               display: inline-block;
+               position: relative;
+               float: left;
+               a {
+                   display: block;
+                   @include padding(10px 0);
+                   @include text-md($color: $themeActive, $font-multiplier: 1.4286, $line-height: 1);
+                   overflow: hidden;
+               }
+               + li {
+                   margin-left: 20px;
+               }
+               .profile {
+                   &__wrapper {
+                       position: relative;
+                       &-icon {
+                           @include size(22px);
+                           float: left;
+                           @include border-radius(50%);
+                           margin-right: 10px;
+                           @media #{$media-phone} {
+                               margin-right: 5px;
+                           }
+                       }
+                       &-name {
+                           float: left;
+                           @include text-md($color: $white, $line-height: 22px);
+                           margin-right: 8px;
+                           @media #{$media-phone} {
+                               display: none;
+                           }
+                       }
+                       .dropdown-menu {
+                           right: 0;
+                           left: auto;
+                           top: 47px;
+                           @include border-radius(0px);
+                           li {
+                               width: $viewportSize;
+                               a {
+                                   width: $viewportSize;
+                                   @include text-md($line-height: 1);
+                                   @include padding(12px 20px);
+                                   i {
+                                       @include padding-right(10px);
+                                       color: $blue;
+                                   }
+                               }
+                               + li {
+                                   border-top: 1px solid $defaultbg;
+                                   margin-left: 0px;
+                               }
+                           }
+                       }
+                   }
+               }
+           }
+        }
+    }
+    &.overlapping {
+        .pageHeader__login {
+            overflow: visible;
+            position: relative;
+            height: 90px;
+            li {
+                position: absolute;
+                left: 0;
+            }
+        }
+    }
+}

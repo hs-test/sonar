@@ -1,0 +1,49 @@
+/* Tabbing View section
+================================ */
+
+.tabbable {
+    &__custom {
+        margin: 20px 0px;
+        .nav-tabs {
+            border: none;
+            background: $white none repeat scroll 0 0;
+            > li {
+                position: relative;
+                border: none;
+                &.active {
+                    a {
+                        border: none;
+                        color: $themePeach2;
+                        background: none repeat scroll 0 0;
+                    }
+                }
+                a {
+                    letter-spacing: 0.2px;
+                    border: none;
+                    font-family: $primarybold;
+                    &:hover, &:focus {
+                        background: none repeat scroll 0 0;
+                        border: none;
+                        color: $themePeach2;
+                    }
+                }
+                + li {
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                        height: calc(100% - 3px);
+                        width: 3px;
+                        background: $defaultbg none repeat scroll 0 0; 
+                    }
+                }
+            }    
+        }
+        .tab-content {
+            margin-top: 3px;
+            background: $white none repeat scroll 0 0;
+            @include padding(15px 10px);
+        }
+    }
+}

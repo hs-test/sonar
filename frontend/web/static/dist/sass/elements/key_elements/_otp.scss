@@ -1,0 +1,46 @@
+/* Error section
+================================ */
+.otp {
+    &__service {
+        &-content {
+            background: $white none repeat scroll 0 0;
+            @include padding(30px 10px);
+            @include border-radius(4px);
+            h2 {
+                @include text-md($line-height: 1, $font-multiplier: 1.286);
+                margin-bottom: 40px;
+                @include padding-bottom(20px);
+                position: relative;
+                &:after {
+                    content: '';
+                    height: 3px;
+                    background: $defaultbg none repeat scroll 0 0;
+                    width: calc(#{$viewportSize} - 80%);
+                    left: 50%;
+                    @include translate(-50%,0); 
+                    position: absolute;
+                    bottom: 0;
+                }
+            }
+            ul {
+                overflow: hidden;
+                li {
+                    display: inline-block; 
+                    &.otp-code {
+                        @include padding(8px 22px);
+                        @include text-md($line-height: 1, $font-multiplier: 2.1423);
+                        background: $defaultbg none repeat scroll 0 0; 
+                        vertical-align: middle;
+                        margin-right: 10px;
+                    }
+                    @media #{$media-phone} {
+                        display: block;
+                        + li {
+                            margin-top: 20px; 
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

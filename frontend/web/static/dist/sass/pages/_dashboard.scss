@@ -1,0 +1,78 @@
+/* Dashboard section
+================================ */
+
+.dashboard__wrapper {
+    &-content {
+        .school-logo {
+            margin: 50px 0 60px; 
+            img {
+                margin: 0 auto;
+            }
+        }
+        @include padding (0 5px);
+        .quick__links {
+            background: $white none repeat scroll 0 0;
+            overflow: hidden;
+            margin-bottom: 30px;
+            ul {
+                li {
+                    width: calc(#{$viewportSize} / 4);
+                    float: left;
+                    text-align: center;
+                    margin: 20px 0;
+                    a {
+                        display: block;
+                        figure {
+                            @include size(60px);
+                            margin: 0 auto 15px;
+                            img {
+                                @include size($viewportSize);
+                                object-fit: cover;
+                            }
+                        }
+                        span {
+                            text-transform: uppercase;
+                            display: block;
+                        }
+                    }
+                    + li {
+                        border-left: 1px solid $border;
+                    }
+                }
+            }
+            &.dual {
+                ul {
+                    li {
+                        width: calc(#{$viewportSize} / 2);
+                        @media #{$media-tablet} {
+                            width: $viewportSize;
+                            border-left: none;
+                            border-top: 1px solid $border;
+                            margin: 0;
+                            @include padding(20px 0); 
+                            &:first-child {
+                                border-top: none;
+                            }
+                        }
+                    }
+                }
+            }
+            &.single {
+                ul {
+                    li {
+                        width: $viewportSize;
+                        border-left: none;
+                        @media #{$media-tablet} {
+                            &:first-child {
+                                border-top: none;
+                            }
+                        }
+                        a {
+                            display: inline-block;
+                        }
+                    }
+                }
+            } 
+        }
+    }
+}

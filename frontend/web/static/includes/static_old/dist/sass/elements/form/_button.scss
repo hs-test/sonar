@@ -1,0 +1,580 @@
+/* Button section
+================================ */
+
+.btn {
+    box-shadow: none !important;
+}
+.button {
+    z-index: 2;
+    position: relative;
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    touch-action: manipulation;
+    cursor: pointer;
+    background-image: none;
+    white-space: normal;
+    @include text-md($letter-spacing: -0.0135em, $font-weight: 300, $line-height: 1.46, $font-multiplier: 1);
+    @include padding(8px 22px);
+    line-height: 1.42857;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    font-family: $montserratlight;
+    border: 2px solid rgba($black,0.3);
+    position: relative;
+    @include border-radius(2px);
+    @include box-shadow(none);
+    @include transition(all 0.3s);
+    &.active.focus {
+        outline: thin dotted!important;
+        outline: 5px auto -webkit-focus-ring-color;
+        outline-offset: -2px;
+    }
+    &:hover, &:focus, &.focus {
+        color: #333333;
+        text-decoration: none;
+    }
+    &:active, &.active {
+        background-image: none;
+        @include box-shadow(none);
+    }
+    &:focus {
+        @include box-shadow(none);
+    }
+    &.disabled, &[disabled] {
+        cursor: not-allowed;
+        opacity: 0.65;
+        filter: alpha(opacity = 65);
+        -webkit-box-shadow: none;
+        box-shadow: none;
+    }
+    &.small {
+        @include text-md($font-multiplier: 0.86);
+        @include padding(6px 25px);
+    }
+    &.medium {
+        @include text-md($font-multiplier: 0.86);
+        @include padding(9px 20px);
+    }
+    &.large {
+        @include padding(12px 35px);
+    }
+    &.button-circle {
+        padding: 0px;
+        width: 32px;
+        height: 32px;
+        position:relative;
+        @include border-radius(50%);
+        border:1px solid rgba(172,179,190,1);
+        background: $white repeat scroll 0 0 transparent;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+            border:1px solid $grey;
+            background: $white repeat scroll 0 0 transparent;
+        }
+    }
+    &.button-centered {
+        display:block;
+        margin-left:auto;
+        margin-right:auto;
+    }
+    &.button-square {
+        padding: 0;
+        width: 24px;
+        height: 24px;
+        border-radius:0;
+        border:0px solid rgba(0,0,0,0);
+        background: none repeat scroll 0 0 transparent;
+    }
+    &.button-border-less {
+        padding: 0;
+        border:0px solid rgba(0,0,0,0);
+        background: none repeat scroll 0 0 transparent;
+        i {
+            margin-right:0px;
+        }
+    }
+    &.disabled {
+        border: 2px solid rgba(0,0,0,0.3) !important;
+        color: #777 !important;
+        background-color: #eee !important;
+    }
+    &-noborder-Bg {
+        border: none !important;
+        background: $transparent !important;
+        color: $transparent !important;
+    }
+    &-block {
+        width: 100%;
+        display: block;
+    }
+    /* multiple buttons in a line */
+    &-group {
+        > .button {
+            margin-left: 0px;
+            + .button {
+                margin-left: 15px;
+            }
+        }
+    }
+    &-equal {
+        > .button {
+            min-width:175px;
+        }
+    }
+
+    /* Button ? Default */
+    &.default {
+        color: $black;
+        border-color: $white;
+        background: none repeat scroll 0 0 $white;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $black;
+            border-color: $white;
+            background: none repeat scroll 0 0 $white;
+        }
+        &.bordered {
+            color: $black;
+            border-color: $black;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white;
+                border-color: $black;
+                background: none repeat scroll 0 0 $black;
+            }
+        }
+    }
+    /* Button ? Grey */
+    &.grey { 
+        color: $white;
+        border-color: $act_Grey;
+        background: none repeat scroll 0 0 $act_Grey;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_Grey, 4%);
+            background: none repeat scroll 0 0 darken($act_Grey, 4%); 
+        }
+        &.bordered {
+            color: $act_Grey;
+            border-color: $act_Grey;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white;
+                border-color: $act_Grey;
+                background: none repeat scroll 0 0 $act_Grey;
+            }
+        }
+    }
+    /* Button ? Yellow */
+    &.yellow { 
+        color: $black;
+        border-color: $act_Yellow;
+        background: none repeat scroll 0 0 $act_Yellow;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $black;
+            border-color: darken($act_Yellow, 4%);
+            background: none repeat scroll 0 0 darken($act_Yellow, 4%); 
+        }
+        &.bordered {
+            color: $black;
+            border-color: $act_Yellow;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $black;
+                border-color: $act_Yellow;
+                background: none repeat scroll 0 0 $act_Yellow;
+            }
+        }
+    }
+
+    /* Button ? Yellow Orange */
+    &.yellowOrange { 
+        color: $white;
+        border-color: $act_YellowOrange;
+        background: none repeat scroll 0 0 $act_YellowOrange;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_YellowOrange, 4%);
+            background: none repeat scroll 0 0 darken($act_YellowOrange, 4%); 
+        }
+        &.bordered {
+            color: $act_YellowOrange;
+            border-color: $act_YellowOrange;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white; 
+                border-color: $act_YellowOrange;
+                background: none repeat scroll 0 0 $act_YellowOrange;
+            }
+        }
+    }
+
+    /* Button ? Orange */
+    &.orange { 
+        color: $white;
+        border-color: $act_Orange;
+        background: none repeat scroll 0 0 $act_Orange;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_Orange, 4%);
+            background: none repeat scroll 0 0 darken($act_Orange, 4%); 
+        }
+        &.bordered {
+            color: $act_Orange;
+            border-color: $act_Orange;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white; 
+                border-color: $act_Orange;
+                background: none repeat scroll 0 0 $act_Orange;
+            }
+        }
+    }
+
+    /* Button ? red Orange */
+    &.redOrange { 
+        color: $white;
+        border-color: $act_RedOrange;
+        background: none repeat scroll 0 0 $act_RedOrange;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_RedOrange, 4%);
+            background: none repeat scroll 0 0 darken($act_RedOrange, 4%); 
+        }
+        &.bordered {
+            color: $act_RedOrange;
+            border-color: $act_RedOrange;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white; 
+                border-color: $act_RedOrange;
+                background: none repeat scroll 0 0 $act_RedOrange;
+            }
+        }
+    }
+
+    /* Button ? red */
+    &.red { 
+        color: $white;
+        border-color: $act_Red;
+        background: none repeat scroll 0 0 $act_Red;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_Red, 4%);
+            background: none repeat scroll 0 0 darken($act_Red, 4%); 
+        }
+        &.bordered {
+            color: $act_Red;
+            border-color: $act_Red;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white; 
+                border-color: $act_Red;
+                background: none repeat scroll 0 0 $act_Red;
+            }
+        }
+    }
+
+    /* Button ? red Violet */
+    &.redViolet { 
+        color: $white;
+        border-color: $act_RedViolet;
+        background: none repeat scroll 0 0 $act_RedViolet;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_RedViolet, 4%);
+            background: none repeat scroll 0 0 darken($act_RedViolet, 4%); 
+        }
+        &.bordered {
+            color: $act_RedViolet;
+            border-color: $act_RedViolet;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white; 
+                border-color: $act_RedViolet;
+                background: none repeat scroll 0 0 $act_RedViolet;
+            }
+        }
+    }
+
+    /* Button ? Violet */
+    &.violet { 
+        color: $white;
+        border-color: $act_Violet;
+        background: none repeat scroll 0 0 $act_Violet;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_Violet, 4%);
+            background: none repeat scroll 0 0 darken($act_Violet, 4%); 
+        }
+        &.bordered {
+            color: $act_Violet;
+            border-color: $act_Violet;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white; 
+                border-color: $act_Violet;
+                background: none repeat scroll 0 0 $act_Violet;
+            }
+        }
+    }
+
+    /* Button ? blue Violet */
+    &.blueViolet { 
+        color: $white;
+        border-color: $act_BlueViolet;
+        background: none repeat scroll 0 0 $act_BlueViolet;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_BlueViolet, 4%);
+            background: none repeat scroll 0 0 darken($act_BlueViolet, 4%); 
+        }
+        &.bordered {
+            color: $act_BlueViolet;
+            border-color: $act_BlueViolet;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white; 
+                border-color: $act_BlueViolet;
+                background: none repeat scroll 0 0 $act_BlueViolet;
+            }
+        }
+    }
+
+    /* Button ? Blue */
+    &.blue { 
+        color: $white;
+        border-color: $act_Blue;
+        background: none repeat scroll 0 0 $act_Blue;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_Blue, 4%);
+            background: none repeat scroll 0 0 darken($act_Blue, 4%); 
+        }
+        &.bordered {
+            color: $act_Blue;
+            border-color: $act_Blue;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white;
+                border-color: $act_Blue;
+                background: none repeat scroll 0 0 $act_Blue;
+            }
+        }
+    }
+
+    /* Button ? blue Green */
+    &.blueGreen { 
+        color: $white;
+        border-color: $act_BlueGreen;
+        background: none repeat scroll 0 0 $act_BlueGreen;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_BlueGreen, 4%);
+            background: none repeat scroll 0 0 darken($act_BlueGreen, 4%); 
+        }
+        &.bordered {
+            color: $act_BlueGreen;
+            border-color: $act_BlueGreen;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white;
+                border-color: $act_BlueGreen;
+                background: none repeat scroll 0 0 $act_BlueGreen;
+            }
+        }
+    }
+
+    /* Button ? green */
+    &.green { 
+        color: $white;
+        border-color: $act_Green;
+        background: none repeat scroll 0 0 $act_Green;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_Green, 4%);
+            background: none repeat scroll 0 0 darken($act_Green, 4%); 
+        }
+        &.bordered {
+            color: $act_Green;
+            border-color: $act_Green;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white;
+                border-color: $act_Green;
+                background: none repeat scroll 0 0 $act_Green;
+            }
+        }
+    }
+
+    /* Button ? yellow Green */
+    &.yellowGreen { 
+        color: $white;
+        border-color: $act_YellowGreen;
+        background: none repeat scroll 0 0 $act_YellowGreen;
+        &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+            color: $white; 
+            border-color: darken($act_YellowGreen, 4%);
+            background: none repeat scroll 0 0 darken($act_YellowGreen, 4%); 
+        }
+        &.bordered {
+            color: $act_YellowGreen;
+            border-color: $act_YellowGreen;
+            background: none repeat scroll 0 0 transparent;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled], &.button-selected {
+                color: $white;
+                border-color: $act_YellowGreen;
+                background: none repeat scroll 0 0 $act_YellowGreen;
+            }
+        }
+    }
+
+    i {
+        margin-right: 10px;
+        &.no-margin {
+            margin-right:0px;
+        }
+        &.right-icon {
+            margin-right: 0px;
+            margin-left: 10px;
+        }
+    }
+}
+fieldset[disabled] .button {
+    cursor: not-allowed;
+    opacity: 0.65;
+    filter: alpha(opacity = 65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+
+
+/* Text links */
+a {
+    &.link {
+        i {
+            padding-right: 10px;
+            &.no-margin {
+                padding-right:0px;
+            }
+            &.right-icon {
+                padding-right: 0px;
+                padding-left: 10px;
+            }
+        }
+        &.underline {
+            border-bottom-width: 1px;
+            border-bottom-style: solid;
+        } 
+        &-grey {
+            color: $grey;
+            border-bottom-color: $grey;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($grey, 4%); 
+                border-bottom-color: darken($grey, 4%);
+            }
+        }
+        &-yellow {
+            color: $act_Yellow;
+            border-bottom-color: $act_Yellow;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_Yellow, 4%); 
+                border-bottom-color: darken($act_Yellow, 4%);
+            }
+        }
+        &-yellowOrange {
+            color: $act_YellowOrange;
+            border-bottom-color: $act_YellowOrange;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_YellowOrange, 4%); 
+                border-bottom-color: darken($act_YellowOrange, 4%);
+            }
+        }
+        &-orange {
+            color: $act_Orange;
+            border-bottom-color: $act_Orange;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_Orange, 4%); 
+                border-bottom-color: darken($act_Orange, 4%);
+            }
+        }
+        &-redOrange {
+            color: $act_RedOrange;
+            border-bottom-color: $act_RedOrange;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_RedOrange, 4%); 
+                border-bottom-color: darken($act_RedOrange, 4%);
+            }
+        }
+        &-red {
+            color: $act_Red;
+            border-bottom-color: $act_Red;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_Red, 4%); 
+                border-bottom-color: darken($act_Red, 4%);
+            }
+        }
+        &-redViolet {
+            color: $act_RedViolet;
+            border-bottom-color: $act_RedViolet;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_RedViolet, 4%); 
+                border-bottom-color: darken($act_RedViolet, 4%);
+            }
+        }
+        &-violet {
+            color: $act_Violet;
+            border-bottom-color: $act_Violet;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_Violet, 4%); 
+                border-bottom-color: darken($act_Violet, 4%);
+            }
+        }
+        &-blueViolet {
+            color: $act_BlueViolet;
+            border-bottom-color: $act_BlueViolet;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_BlueViolet, 4%); 
+                border-bottom-color: darken($act_BlueViolet, 4%);
+            }
+        }
+        &-blue {
+            color: $act_Blue;
+            border-bottom-color: $act_Blue;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_Blue, 4%); 
+                border-bottom-color: darken($act_Blue, 4%);
+            }
+        }
+        &-blueGreen {
+            color: $act_BlueGreen;
+            border-bottom-color: $act_BlueGreen;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_BlueGreen, 4%); 
+                border-bottom-color: darken($act_BlueGreen, 4%);
+            }
+        }
+        &-green {
+            color: $act_Green;
+            border-bottom-color: $act_Green;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_Green, 4%); 
+                border-bottom-color: darken($act_Green, 4%);
+            }
+        }
+        &-yellowGreen {
+            color: $act_YellowGreen;
+            border-bottom-color: $act_YellowGreen;
+            &:hover, &:focus, &.focus, &.disabled, &[disabled] {
+                color: darken($act_YellowGreen, 4%); 
+                border-bottom-color: darken($act_YellowGreen, 4%);
+            }
+        }
+        + .link {
+            margin-left: 15px;
+        }
+    }
+}

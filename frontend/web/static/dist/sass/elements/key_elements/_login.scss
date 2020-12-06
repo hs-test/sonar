@@ -1,0 +1,268 @@
+/* Login section
+================================ */
+
+.login {
+    /* Begin single section login style */
+    &__Class {
+        .page__content-inner {
+            margin-left: 0px;
+            border-left: none;
+            min-height: inherit;
+            .pageHeader__inner {
+                @include padding(10px 30px 10px 45px);
+                &-top-menu, .open-menu, .skew-menu {
+                    display: none !important;
+                }
+                @media #{$media-ipadSmall} {
+                    @include padding(10px 25px);
+                }
+                &-logo {
+                    max-width: $viewportSize;
+                }
+            }
+        }
+        .page-container {
+            background: $defaultbg none repeat scroll 0 0; 
+        }
+        .pageHeader {
+            width: $viewportSize;
+        }
+    }
+    &__content {
+        background: $white none repeat scroll 0 0;
+        border: 1px solid $border;
+        @include border-radius(2px);
+        margin: 60px auto;
+        @include padding(30px);
+        width: 420px;
+        @media #{$media-ipadSmall} {
+            @include padding(20px 20px 30px);
+            width: calc(#{$viewportSize} - 50px);
+        }
+        &-form {
+            &-title {
+                border-bottom: 1px solid #d1d5da;
+                margin: 0 -30px 25px;
+                padding: 0 30px 15px;
+                @include text-md($font-weight: 300, $font-multiplier: 1.72);
+                @media #{$media-ipadSmall} {
+                    margin: 0 -20px 25px;
+                    @include text-md($font-weight: 300, $font-multiplier: 1.4);
+                }
+            }
+            &-social {
+                ul {
+                    li {
+                        @include transition(all 0.3s ease-in);
+                        a {
+                            display: block;
+                            @include padding(15px 20px);
+                            text-align: center;
+                            width: $viewportSize;
+                            @include text-md($font-weight: 600, $color: $white, $font-multiplier: 1.15);
+
+                            i {
+                                display: inline-block;
+                                @include text-md($color: $white, $font-multiplier: 1.15);
+                                margin: -1px 0 0;
+                                width: 30px;
+                            }
+                        }
+                        + li {
+                            margin-top: 15px;
+                        }
+                        &.fb {
+                            background: lighten($facebook, 10%) none repeat scroll 0 0;
+                            &:hover {
+                                background: $facebook none repeat scroll 0 0;
+                                @include transition(all 0.3s ease-in);
+                            }
+                        }
+                        &.tweet {
+                            background: lighten($twitter, 10%) none repeat scroll 0 0;
+                            &:hover {
+                                background: $twitter none repeat scroll 0 0;
+                                @include transition(all 0.3s ease-in);
+                            }
+                        }
+                    }
+                }
+            }
+            &-option {
+                display: block;
+                margin: 25px 0;
+                position: relative;
+                text-align: center;
+                &:after {
+                    border-top: 1px solid $border;
+                    content: "";
+                    display: block;
+                    height: 1px;
+                    position: absolute;
+                    top: 15px;
+                    width: $viewportSize;
+                }
+                span {
+                    background-color: $white;
+                    display: inline-block;
+                    @include padding(5px 20px);
+                    position: relative;
+                    z-index: 90 !important;
+                }
+            }
+            .input-icon {
+                margin-bottom: 25px;
+            }
+            .forgot_password {
+                text-align: right;
+                margin-top: 2px;
+                @media #{$media-tablet} {
+                    text-align: left;
+                    margin-bottom: 30px;
+                }
+            }
+            .form-actions {
+                .button {
+                    @media #{$media-tablet} {
+                        width: $viewportSize;
+                    }
+                }
+            }
+        }
+        .input-icon {
+            position: relative;
+            > i {
+                display: block;
+                @include text-md($color: #8e98a7, $font-multiplier: 1.15);
+                margin: 9px 2px 4px 10px;
+                position: absolute;
+                text-align: center;
+                width: 16px;
+                z-index: 3;
+            }
+            > .form-control {
+                @include padding-left(33px);
+            }
+        }
+        &-signup {
+            margin: 0px;
+            margin-top: 20px;
+            text-align: center;
+            > span {
+                display: block;
+                margin-top: 5px;
+            }
+        }
+    }
+    /* //End single section login style */
+
+    /* Begin Dual section login style */
+    &__dualSection {
+        @include padding(50px 0);
+        &-content {
+            position: relative;
+            min-height: 550px;
+            @include size($viewportSize);
+            &-seprator {
+                background: $white none repeat scroll 0 0;
+                @include border-radius(50%);
+                box-shadow: 0 0 5px 0 #dddddd;
+                line-height: 60px;
+                position: absolute;
+                text-align: center;
+                top: 50%;
+                left: 50%;
+                @include translate(-50%, -50%);
+                @include size(60px);
+                z-index: 100;
+                @media #{$media-ipadPortrait}{
+                    top: 55%; 
+                }
+                > span {
+                    font-size: ($baseFontSize * 1.2);
+                }
+            }
+            .login-form {
+                overflow: hidden;
+                @include padding(70px 60px);
+                position: relative;
+                z-index: 100;
+                > h3 {
+                    &:before {
+                        content: "";
+                        height: 1px;
+                        left: 0;
+                        position: absolute;
+                        top: 50%;
+                        transform: translate(0px, -50%);
+                        width: $viewportSize;
+                        border-top: 1px solid #d4dbe1;
+                    }
+                    margin-bottom: 30px;
+                    @include padding(14px 20px);
+                    position: relative;
+                    text-align: center;
+
+                    span {
+                        background: #fafafa none repeat scroll 0 0;
+                        display: inline-block;
+                        font-weight: 700;
+                        padding: 0 20px;
+                        position: relative;
+                    }
+                }
+                form {
+                    position: relative;
+                    z-index: 100;
+                }
+            }
+            aside {
+                width: 50%;
+                height: $viewportSize;
+                position: absolute;
+                @include transition(all 0.3s ease-in);
+                background: #fafafa none repeat scroll 0 0;
+                z-index: 1;
+                @media #{$media-ipadPortrait}{
+                    position: relative;
+                    width: $viewportSize;
+                }
+                &.blur-section {
+                    @include opacity(0.3);
+                    @include transition(all 0.3s ease-in);
+                }
+            }
+            &-first {
+                left: 0;
+                background: lighten($basebg, 45%) none repeat scroll 0 0 !important;
+                .login-form {
+                    > h3 {
+                        span {
+                            background: lighten($basebg, 45%) none repeat scroll 0 0;
+                        }
+                    }
+                }
+            }
+            &-second {
+                right: 0;
+            }
+            .input-icon {
+                position: relative;
+                > i {
+                    margin: 13px 2px 4px 10px;
+                    @include text-md($color: #8e98a7, $font-multiplier: 1.12);
+                    display: block;
+                    position: absolute;
+                    text-align: center;
+                    width: 16px;
+                    z-index: 3;
+                }
+                > .form-control {
+                    @include padding-left(33px);
+                }
+            }
+        }
+
+    }
+    /* //End Dual section login style */
+}

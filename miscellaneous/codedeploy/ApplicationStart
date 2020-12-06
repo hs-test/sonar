@@ -1,0 +1,7 @@
+#!/bin/bash
+
+service php-fpm start
+service httpd start
+
+chkconfig httpd on
+chkconfig php-fpm on

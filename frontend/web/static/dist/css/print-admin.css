@@ -1,0 +1,246 @@
+/* Begin print css */
+   
+
+@media print {
+
+    body { 
+        color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+        font-size: 11pt;
+        line-height: 1.3;
+        font-family: Arial,Helvetica Neue,Helvetica,sans-serif !important;
+        font-size-adjust: none;
+        -moz-text-size-adjust: none;
+        -webkit-text-size-adjust: none;
+        -ms-text-size-adjust: none; 
+        margin: 2mm 2mm 2mm 15mm;
+    }
+    ul, ul li, ol li {
+        list-style: none;
+    }
+    /* End base css */
+
+    /* Print Css for Admin Section Begin */
+    .page__content-inner {
+        margin-left: 0px;
+    }
+    /* Begin header section css */ 
+    .topHead__wrapper, .data__view, .additional-details {
+        display: block !important;
+    } 
+    .topHead__content-logo-faviconLogo li.logoV2 {
+        display: block !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        text-align: center !important;
+        margin-top: 10px !important;
+        margin-bottom: 10px !important;
+        margin-left: -20px !important;
+    }
+    .topHead__content-logo-faviconLogo li.logoV2 a {
+        display: block !important;
+        width: 100% !important;
+        text-align: center !important;
+    }
+    .topHead__content-logo-faviconLogo li.logoV2 img {
+        max-width: 100% !important;
+        text-align: center !important;
+        margin: 0 auto !important;
+        -webkit-object-fit: cover;
+        -moz-object-fit: cover;
+        -ms-object-fit: cover;
+        object-fit: cover;
+    }
+    .topHead__content-logo-printElements {
+        text-align: center;
+    }
+    .topHead__content-logo-printElements .content p { 
+        margin: 0px 0px 3px 0px !important; 
+        padding: 0 !important;
+        font-size: 10pt;
+        font-weight: bold !important;
+    }
+    .form-caption {   
+        padding-bottom: 0px;
+        margin-bottom: 15px;
+        position: relative;
+        margin-top: 0px;
+        text-align: center;
+        font-weight: bold;
+    }
+    .form-caption p.formCaption {
+        font-size: 12pt;
+    }
+    .application-number {
+        width: auto;
+        margin-bottom: 5px;
+        margin-top: 0px; 
+        float: right; 
+        margin-right: 18px !important;
+    }
+    .application-number p {
+        background-color: #efefef !important;
+        color: #000000 !important;
+        border: 1px solid #dfdfdf; 
+        padding: 7px;
+        font-weight: bold;
+
+    }
+    /* End header section css */
+
+    .page__sidebar, .page__sidebar-profile, .page__sidebar-standaloneNav, .pageHeader, .pageHeader__inner, .page__bar, .responsive-standalone-close, .topHead__content-logo ul li {
+        display: none !important;
+    }
+    .widget__wrapper {
+        margin-bottom: 5px !important;
+        padding: 0px 20px !important;
+    }
+    .listing__grid-wrapper {
+        padding: 0px !important; 
+    }
+    .listing__grid-wrapper h5 {
+        background-color: #bdbdbd !important;
+        color: #000000 !important; 
+        width: 100%  !important;
+        padding: 8px  !important;
+        display: block  !important; 
+        margin-bottom: 3pt  !important;
+        margin-top: 15px  !important;
+        font-size: 100%  !important;
+        text-align:  left !important;
+    }
+    .listing__grid-wrapper ul {
+        margin: 0;
+        padding: 0;
+        display: inline-block;
+        width: 100%;
+    }
+    .listing__grid-wrapper ul li {
+        width: calc(100% / 2 - 15px) !important;
+        float: left;
+        margin: 6px !important;
+        display: block;
+    }
+    .listing__grid-view {
+        width: 100%;
+        display: table;
+        border: 2px solid #bdbdbd;
+        padding: 3px;
+        font-size: 12pt !important;
+    }
+    .listing__grid-view .content {
+        width: 100% !important;
+         
+    }
+    .listing__grid-view .content p, .listing__grid-view .content span {
+        display: inline-block !important;
+        width: auto !important;
+        font-size: 12pt !important;
+    }
+    .listing__grid-view .content p {
+        font-weight: bold !important;
+    }
+    .listing__grid-view .content span { 
+        font-weight: normal !important;
+    }
+    .listing__grid-view .content p:after {
+        content: ':';
+        margin: 0 8px;
+    }
+    .listing__grid-wrapper ul li .content {
+        height: auto !important;
+    }
+    /* Begin photograph box section css */
+    .attachphoto__wrapper {
+        width: calc(100% - 15px);
+        padding: 30px;
+        border: 2px solid #efefef !important;
+        overflow: hidden;
+        margin-bottom: 10px;
+    }
+    .attachphoto__wrapper ul {
+        padding: 0;
+        margin: 0;
+    }
+    .attachphoto__wrapper ul li {
+        width: calc(100% / 3);
+        float: left;
+    }
+    .attachphoto__wrapper ul li .photo-block {
+        width: 160px;
+        height: 160px;
+        border: 2px solid #999999;
+        display: table; 
+        text-align: center; 
+        font-weight: bold; 
+        position: relative;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        color: #000000 !important;
+    }
+    .attachphoto__wrapper ul li .photo-block .photo-content {
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        -ms-transform: translate(-50%, -50%);
+        -o-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        position: absolute;
+        top: 50%;
+        left: 50%; 
+    } 
+    /* End photograph box section css */
+
+    .additional-details {
+        margin-top: 50px;
+    }
+    .additional-details  h5 {
+        text-align: center;
+        background-color: #efefef !important;
+        font-weight: bold;
+        margin-bottom: 25px !important;
+        padding: 10px !important;
+    }
+    .additional-details .data__view ul li {
+        border: 0 !important;
+        padding: 0 !important;
+
+    }
+    .additional-details .data__view ul.listing li {
+        width: 100%;
+    }
+
+    .additional-details .data__view p { 
+        margin-bottom: 40px !important;
+    } 
+    .additional-details .data__view ul li {
+        width: 49%;
+        display: inline-block;
+        float: left;
+    }
+    .additional-details .data__view ul li .content p {
+        margin-bottom: 20px !important;
+        display: inline-block;
+        font-weight: bold !important;
+    }
+    .additional-details .data__view ul li .content p:after {
+        content:':';
+        display: inline-block;
+        color: #000;
+        margin: 0 8px;
+    }
+    .additional-details .data__view ul li .content span {
+        display: inline-block;
+    }
+    .data__view ul {
+        padding: 0;
+        margin: 0;
+
+    }
+
+    .alertShow {
+        display: none !important;
+    } 
+
+    /* Print Css for Admin Section End */
+}
+/* End print css */

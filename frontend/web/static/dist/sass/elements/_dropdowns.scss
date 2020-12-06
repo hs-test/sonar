@@ -1,0 +1,157 @@
+/* Dropdowns section
+================================ */
+
+.dropdown {
+    &-bar {
+        .dropdown-toggle {
+            @include border-radius(0px);
+            @include padding(0px !important);
+            background: $transparent;
+            span {
+                + span {
+                    margin-left: 5px;
+                }
+            }
+        }
+    }
+    &-menu {
+        &.simple__menu {
+            @include border-radius(2px);
+            min-width: 150px;
+            @include padding(0px);
+            > li {
+                > a {
+                    white-space: normal;
+                    @include padding(10px 15px);
+                    position: relative;
+                    &:hover, &:focus {
+                        background: lighten($offwhite, 1.8%) none repeat scroll 0 0;
+                    }
+                }
+                + li {
+                    border-top: 1px solid $border;
+                }
+                &.active {
+                    a {
+                        background: $blue none repeat scroll 0 0;
+                        &:hover, &:focus {
+                            background: $blue none repeat scroll 0 0;
+                        }
+                    }
+                }
+            }
+            &-iconRight {
+                i {
+                    background: #f2f4f6 none repeat scroll 0 0;
+                    border-left: 1px solid #d4dbe1;
+                    height: 100%;
+                    line-height: 40px;
+                    position: absolute;
+                    right: 0;
+                    text-align: center;
+                    top: 0;
+                    width: 30px;
+                }
+            }
+            &-fullwidth {
+                width: $viewportSize;
+            }
+            .dropdown-menu-list {
+                padding-right: 0;
+                padding-left: 0;
+                > li {
+                    display:table;
+                    width:$viewportSize;
+                    > a {
+                        display: table-cell;
+                        vertical-align:middle;
+                        position: relative;
+                        clear: both;
+                        white-space: normal;
+                        @include text-md($color: $grey, $font-weight: 400, $line-height: 1.46, $font-multiplier: 1);
+                        @include padding(10px 15px);
+                        text-shadow: none;
+                        &:hover, &:focus {
+                            opacity: 1;
+                            color: $blue;
+                            background: lighten($offwhite, 1.8%) none repeat scroll 0 0;
+                        }
+                        &:first-child {
+                            border-top-left-radius: 2px;
+                            border-top-right-radius: 2px;
+                            > a {
+                                border-top-left-radius: 2px;
+                                border-top-right-radius: 2px;
+                            }
+                        }
+                        &:last-child {
+                            border-bottom-left-radius: 2px;
+                            border-bottom-right-radius: 2px;
+                            > a {
+                                border-bottom-left-radius: 2px;
+                                border-bottom-right-radius: 2px;
+                            }
+                        }
+                        .time {
+                            background: $defaultbg none repeat scroll 0 0;
+                            @include border-radius(3px);
+                            float: right;
+                            @include text-md($font-weight: 400, $font-multiplier: 0.8);
+                            max-width: 75px;
+                            opacity: 0.7;
+                            @include padding(1px 5px);
+                            text-align: right;
+                        }
+                        .details {
+                            display: inline-block;
+                            @include text-md($font-weight: 400, $font-multiplier: 0.86);
+                            height: 60px;
+                            margin-bottom: -3px;
+                            overflow: hidden;
+                            @include padding(0 30px);
+                            width: calc(100% - 75px);
+                        }
+                        .label {
+                            &.label-icon {
+                                display: inline-block;
+                                @include size(22px);
+                                left: 15px;
+                                padding: 4px;
+                                position: absolute;
+                                text-align: center !important;
+                                i {
+                                    @include text-md($font-multiplier: 0.86);
+                                    position: absolute;
+                                    top: 50%;
+                                    left: 50%;
+                                    @include translate(-50%,-50%);
+                                }
+                            }
+                        }
+                    }
+                    + li {
+                        border-top: 1px solid $border;
+                    }
+                }
+                &.no_icon_margin {
+                    li {
+                        a {
+                            i {
+                                margin-top:0px;
+                            }
+                        }
+                    }
+                }
+            }
+            &.pull-right {
+                right: 13px;
+            }
+            .switchery {
+                float: right;
+            }
+        }
+        &.no-shadow {
+            @include box-shadow(0 0px 0px rgba($black, 0));
+        }
+    }
+}

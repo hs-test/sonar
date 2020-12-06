@@ -1,0 +1,165 @@
+/* Page Header section
+================================ */
+.header { 
+    max-width: 1700px; 
+    margin: 0 auto;
+    &__wrapper {
+        @include padding(20);
+        @include flexbox();
+        @include justify-content(space-between);
+        @include align-items(center);
+    }
+    &__top {
+        background: $orange none repeat scroll 0 0; 
+    }
+    &__logo {
+        &-wrap {  
+            a {
+                display: block;
+                img { 
+                    width: auto;
+                    float: left;
+
+                    @media #{$media-ipadPortrait} {
+                        height: 65px; 
+                    }
+                    &.main {
+                        @media #{$media-ipadSmall} {
+                            display: none;
+                        }
+                    } 
+                }
+            }
+
+        }
+    } 
+    &__navigation {  
+        &--list {
+            @include flexbox();
+            @media #{$media-ipadPortrait} {
+                display: none;
+            }
+        }
+        &--icon {
+            display: none;
+            @media #{$media-ipadPortrait} {
+                display: block;
+            }
+        }
+        &--item {  
+            position: relative;
+
+            a {
+                color: $white;
+                display:block;
+                @include padding(18 20);
+                @extend .font-regular;
+                @include font-size(16);
+                @include transition(0.4s all ease-in-out);
+                
+                &:hover, &:focus {
+                    background: $blue none repeat scroll 0 0;
+                }
+            }
+            &.active {
+                background: $blue none repeat scroll 0 0;
+            }
+            .sub-menu {
+                top:120px;
+                left:0px;
+                margin:0;
+                @include opacity(0);
+                z-index:9;
+                width:200px;
+                padding:0px;
+                text-align:left;
+                visibility:hidden;
+                position:absolute;
+                background:$blue none repeat scroll 0 0;
+                @include transition(all 0.2s linear 0.1s);
+                li {
+                    margin:0;
+                    display:block;
+                    padding:0px;
+                    position: relative;
+                    &.sub-children {
+                        &:after {
+                            content: "\f105";
+                            position: absolute;
+                            top: 50%;
+                            right: 15px;
+                            font-family: $iconfont;
+                            color: $white !important;
+                            @include translate(0,-50%);
+                        }
+                    }
+
+                    a {
+                        color: $white;
+                        display:block;
+                        text-align:left;
+                        text-transform:none;
+                        @include padding(13 14);
+                        border-bottom:1px solid rgba($blue, 0.9);
+                        @include font-size(14);
+                        @extend .font-light;
+                        &:hover, &:focus, &:active {
+                            color:$white !important;
+                            background: $lightBlue none repeat scroll 0 0;
+                        }
+                    }
+
+                    &:hover {
+                        &.sub-children {
+                            &:after {
+                                color:$white !important;
+                                background: $lightBlue none repeat scroll 0 0;
+                            }
+                            > a {
+                                color:white !important;
+                                background: $lightBlue none repeat scroll 0 0;
+                            }
+                        }
+                        .sub-menu {
+                            top:0px;
+                            @include opacity(1);
+                            visibility:visible;
+                        }
+                    }
+                }
+
+                .sub-menu {
+                    top:10px;
+                    left:100%;
+                    border-left:2px solid rgba($black, 0.4);
+                    &:after {
+                        display: none;
+                    }
+                    &.right {
+                        left:auto !important;
+                        right: $viewportSize;
+                        border-left:none;
+                        border-right:2px solid rgba($black, 0.4);
+                    }
+                }
+            }
+            &:hover > .sub-menu {
+                top:55px;
+                @include opacity(1);
+                visibility:visible;
+
+                &--link {
+                    &:hover, &:focus, &.active {
+                        color: $orange;
+                    }
+                }
+            }
+            &:last-child {
+                .sub-menu {
+                    left: auto;
+                    right: 0;
+                }
+            }
+        }
+    }
+}

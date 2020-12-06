@@ -1,0 +1,20 @@
+#!/bin/bash
+
+IEPF_DIR="/var/www/iepf"
+IEPF_BACKUP_DIR="/var/www/iepf_old"
+
+service php-fpm stop
+service httpd stop
+
+#if [ -f /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl ]; then
+#    /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -m ec2 -a stop
+#fi
+
+#CodeDeploy complains in AutoScaling scenario as there is no file overwrite option, when codedeploy is launched automatically from ASG
+#making a backup of the current nios system.
+
+if [ -d $IAP_BACKUP_DIR ]; then
+    rm -rf $IEPF_BACKUP_DIR
+fi
+
+mv $IEPF_DIR $IEPF_BACKUP_DIR

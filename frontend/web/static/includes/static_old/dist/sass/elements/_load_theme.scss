@@ -1,0 +1,54 @@
+/* Loading section
+================================ */
+
+.loading {
+    &__spinner {
+	position: fixed;
+	top: 50%;
+	left: 50%;
+        @include translate(-50%,-50%);
+        z-index: 100;
+        text-align: center;
+        &-overlay {
+            position: fixed;
+            @include size(100%);
+            background: rgba($black, 0.3) none repeat scroll 0 0;
+            z-index: 99;
+            left: 0;
+            top: 0;
+        }
+        .loader {
+            span {
+                display: block;
+            }
+            .text {
+                color: $white;
+            }
+        }
+    }
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(100%);
+        
+        .loading__spinner, .loading__spinner-overlay {
+            position: absolute;
+        }
+        &.theme2 {
+            position: relative;
+            .loading__spinner {
+                position: relative;
+                margin-bottom: 20px;
+                top: 0;
+                @include translate(-50%, 0);
+                &-overlay {
+                    display: none;
+                }
+                .loader .text {
+                    color: $themeBlue;
+                }
+            }
+        }
+    }
+}

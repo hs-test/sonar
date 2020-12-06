@@ -1,0 +1,68 @@
+#!/bin/bash
+
+currentDir="$(dirname "$0")"
+COMPOSER_CMD=$(which composer)
+CONF_DIR="$currentDir/conf"
+HTTPD_DIR="/etc/httpd"
+DEPLOYMENT_GROUP_NAME_ENV=$(echo "$DEPLOYMENT_GROUP_NAME" | cut -d- -f1)
+
+#############################
+#Install Apache(httpd24)
+#############################
+yum install -y mod24_ssl
+
+#############################
+#Install php (7.0)
+#############################
+yum remove -y php73
+yum install -y php73-fpm php73-mbstring php73-gd php73-cli php73-mcrypt php73-opcache php73-pdo php73-mysqlnd php73-zip
+yum install -y git --nogpgcheck
+
+
+#############################
+#Install composer
+#############################
+if [[ "" == "$COMPOSER_CMD" ]]
+then
+    curl -sS https://getcomposer.org/installer | sudo php
+    mv composer.phar /usr/local/bin/composer
+    ln -s /usr/local/bin/composer /usr/bin/composer
+fi
+
+#####
+#copy github token
+#####
+#mkdir -p ~/.composer
+#cp $currentDir/conf/composer/auth.json ~/.composer/auth.json
+
+
+##################################################################
+
+###########
+#Apache
+###########
+cp -f $CONF_DIR/apache/httpd.conf $HTTPD_DIR/conf/httpd.conf
+cp -f $CONF_DIR/apache/index.php /var/www/html/index.php
+cp -f $CONF_DIR/apache/.htaccess /var/www/html/.htaccess
+cp -f $CONF_DIR/apache/health-check.php /var/www/html/health-check.php
+
+#Copy conf.d & conf.modules.d files
+rsync -azq $CONF_DIR/apache/conf.d/ /etc/httpd/conf.d/
+rsync -azq $CONF_DIR/apache/conf.modules.d/ /etc/httpd/conf.modules.d/
+
+##################################################################
+
+###########
+#PHP
+###########
+cp -f $CONF_DIR/php/php-7.0.ini /etc/php-7.0.ini
+
+##################################################################
+
+###########
+#PHP-FPM
+###########
+rm -rf /etc/php-fpm.d/www.conf
+cp -f $CONF_DIR/php-fpm/www.conf /etc/php-fpm.d/www.conf
+
+##################################################################

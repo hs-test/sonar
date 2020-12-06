@@ -1,0 +1,78 @@
+/* Page Footer section
+================================ */
+
+.footer {
+    @include transition(margin 0.3s ease 0s);
+    @include padding(15px 0);
+    border-top: 1px solid $border;
+    background: $white none repeat scroll 0 0;
+    .container {
+        width: $viewportSize;
+    }
+    &__content {
+        ul {
+            display: table;
+            overflow: hidden;
+            width: $viewportSize;
+            li {
+                display: table-cell;
+                vertical-align: middle;
+                width: $viewportSize;
+                text-align: center;
+                overflow: hidden;
+                + li {
+                    border-left: 1px solid $border; 
+                }
+                @media #{$media-ipadSmall} {
+                    width: $viewportSize;
+                    display: block;
+                    + li {
+                        border-left: none;
+                        border-top: 1px solid $border;
+                        @include padding-top(15px);
+                        margin-top: 15px;
+                    }
+                }
+            }
+        }
+        &.multi {
+            ul {
+                li {
+                    width: 50%;
+                    + li {
+                        text-align: right;
+                    }
+                    a {
+                        width: $viewportSize;
+                        display: block;
+                        float: left;
+                        figure {
+                            height: 40px;
+                            max-width: $viewportSize;
+                            img {
+                                object-fit: cover;
+                                @include size(#{$viewportSize});
+                                width: auto;
+                            }
+                        }
+                        + a {
+                            border-left: 1px solid $border;
+                        }
+                    }
+                    &.multi {
+                        a {
+                            width: 50%;
+                            display: inline-block;
+                        }
+                    }
+                    @media #{$media-ipadSmall} {
+                        width: $viewportSize;
+                        + li {
+                            text-align: center;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

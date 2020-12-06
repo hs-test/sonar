@@ -1,0 +1,43 @@
+@charset "utf-8";
+
+/*
+        Theme Name		: School Admin Panel
+        Description	: This is the official Theme for Cognitives
+        Author			: TBA
+        Author URI		: TBA
+ 
+        Version			: 3.5
+        Tags			:css3,blue,green,white,one-column,two-columns,three-columns,fixed-width,responsive-designs,custom-css-menu,full-width-template,sticky-post,theme-options,threaded-comments,translation-ready,bootstrap-ready,fontawesome.
+ 
+        License			: TBA
+        License URI	: TBA
+*/
+
+/* Force Firefox to show broken/missing image placeholders
+------------------------------------------------------------------*/
+@-moz-document url-prefix(http), url-prefix(file) {
+    img:-moz-broken {
+        -moz-force-broken-image-icon:1;
+        width:100%;
+        height:100%;
+    }
+}
+
+/*! ATTENTION:This project uses SASS! Please make your CSS edits in sass/default.scss. */
+
+// Includes
+// ================================
+@import 'vendors/bootstrap/stylesheets/bootstrap';
+@import 'vendors/font-awesome-4.7.0/stylesheets/font-awesome';
+@import 'vendors/insphere-icons/stylesheets/insphere-icons';
+@import 'vendors/switchery/stylesheets/switchery';
+@import 'vendors/chosen-bootstrap/stylesheets/chosen';
+@import 'vendors/bootstrap-datepicker/stylesheets/bootstrap-datepicker3';
+@import 'vendors/tipped/stylesheets/tipped';
+@import 'vendors/animate/stylesheets/animate';
+@import 'vendors/fileinput/stylesheets/fileinput';
+@import 'vendors/bootstrap-fileupload/stylesheets/bootstrapfileupload';
+@import 'vendors/owlcarousel/stylesheets/owl.carousel';
+@import 'vendors/owlcarousel/stylesheets/owl.theme.default';
+@import 'vendors/owlcarousel/stylesheets/owl.theme.green';
+ 

@@ -1,0 +1,49 @@
+/* Error section
+================================ */
+.error {
+    &__theme {
+        text-align: center;
+        margin-top: 100px;
+        figure {
+            height: 100px;
+            img {
+                margin: 0 auto;
+                height: $viewportSize;
+            }
+        }
+        &-content {
+            h2 {
+                @include text-md($color: $error, $font-multiplier: 10, $line-height: 1);
+                margin-top: 25px;
+                font-family: $rubikbold;
+                @media #{$media-tablet} {
+                    @include text-md($color: $error, $font-multiplier: 7, $line-height: 1);
+                }
+            }
+            p {
+                @include text-md($color: $error, $font-multiplier: 1.4286);
+                font-family: $rubikmedium;
+                text-transform: uppercase;
+                @media #{$media-tablet} {
+                    @include text-md($color: $error, $font-multiplier: 1.2857);
+                }
+            }
+        }
+        &-gallery {
+            background: $white none repeat scroll 0 0;
+            max-width: 700px;
+            margin: 0 auto;
+            @include border-radius(4px);
+            @include padding(40px 0); 
+            width: $viewportSize;
+            figure { 
+                height: 250px;  
+            }
+            .error__theme-content {
+                h3 { 
+                    @include text-md($font-multiplier: 1.572, $color: $grey4);
+                }
+            }
+        }
+    }
+}

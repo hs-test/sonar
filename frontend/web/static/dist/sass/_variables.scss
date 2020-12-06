@@ -1,0 +1,81 @@
+// Colors
+// ================================
+$basebg:                                        #4c721d;
+$defaultbg:                                     #f2f4f6;
+$baseColor:                                     #58595b;
+$offwhite:					#f0f0f0;
+$white:						#ffffff;
+$greyish:					#898989;
+$blk50:						#666666;
+$border:					#cccccc;
+$borderlight:					#dddddd;
+$transparent:                                   rgba(0,0,0,0);
+$error:						#d71f29;
+$success:					#40dea0;
+$warning:					#fcba08;
+$info:                                          #129eff;
+
+
+/* Button ▸ Colors */
+$blue:						#0fa3fd;
+$green:						#2ac81e;
+$grey:						#515356;
+$grey2:						#8c8d93;
+$grey3:						#929298;
+$grey4:						#818181;
+$black:						#2c2c3a;
+$zblack:					#000000;
+$red:						#e73c51;
+$themered:					#e63c51;
+$themepink:					#f3989b;
+$themeyellow:                                   #f3d550;
+$themelightBlue:                                #19abbe;
+$themeBlue:                                     #43546d;
+$themeorange:                                   #ef772f;
+$themegreenshade:                               #17a49a;
+$purple:					#7f60e4;
+$themePurple:					#963a4f;
+$themePurple2:					#7d7aa2;
+$yellow:					#f5d54d;
+$darkpurple:                                    #6949b9;
+$lightpurple:                                   #935bd2;
+$footer:					#3c3d3f;
+$highlightText:					#707497;
+$themeActive:					#39c3dd;
+$themePeach:					#f7987a;
+$themePeach2:					#f06e60;
+$reclogoblue:					#005baa;
+
+/* Social ▸ Colors */
+$facebook:					#3b5998;
+$twitter:					#00aeef;
+$pinterest:                                     #bd081c;
+$googleplus:                                    #e34829;
+$youtube:					#d62423;
+$instagram:                                     #2c5987;
+$linkedin:					#1f7bc2;
+$flickr:					#377ede;
+
+/* Border ▸ Widths */
+$width:						1px;
+$style:						solid;
+$color:						#dfe2e3;
+
+/* Widths ▸ Window Width */
+$viewportSize:                                  100%;
+$max-width:                                     1170px;
+
+
+
+/* Media Query Breakpoints */
+$media-desktop: "screen and (max-width: 1199px)";
+$media-smallDevices: "screen and (min-width : 1025px) and (max-width : 1199px)";
+$media-ipadLandscape: "screen and (min-width : 992px) and (max-width : 1024px)";
+$media-ipadPortrait: "screen and (max-width :992px)";
+$media-iPad: "screen and (min-width : 768px) and (max-width : 992px)";
+$media-ipadSmall: "screen and (max-width :767px)";
+$media-ipadport: "screen and (min-width :568px) and (max-width:767px)";
+$media-tablet: "screen and (max-width: 599px)";
+$media-smalldevices: "screen and (min-width :568px) and (max-width:992px)";
+$media-iPhoneMedium: "screen and (min-width : 481px) and (max-width : 567px)";
+$media-phone: "screen and (min-width : 200px) and (max-width : 480px)";

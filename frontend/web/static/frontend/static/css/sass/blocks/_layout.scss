@@ -1,0 +1,257 @@
+/* layout section
+================================ */ 
+/* Page Header Start
+   ================================ */
+.page-header {
+    &__breadcrumb {
+        background: #f7f8f8 none repeat scroll 0 0; 
+        @include box-shadow (0px 0px 47px -8px rgba(0,0,0,0.15));
+        
+        .breadcrumb {
+            margin-bottom: 0px;
+            border-radius: 0px;
+            background: transparent;
+            float: left;
+            
+            .breadcrumb-item {
+                @include font-size(14);
+                @extend .font-regular;
+                a {
+                    color: $black2;
+                    &:hover, &:focus {
+                        color: $orange;
+                    }
+                }
+                
+                &.active {
+                    color: $blue;
+                }
+            }
+        }
+    }
+    &__innerbanner {
+        @include margin-bottom(15);
+    }
+} 
+/* Page Header end
+   ================================ */
+
+
+/* Inner Body start
+   ================================ */
+.inner-body {
+    @include padding(20 0);
+    min-height: 500px;
+}
+/* Inner Body end
+   ================================ */
+
+
+/* Home Counter Start
+   ================================ */
+.counter__wrapper { 
+    z-index: 8;  
+    
+    @media #{$media-ipadSmall} {
+        @include margin-bottom(30);
+    }
+    
+    &-block {
+        @include flexbox(); 
+        @include justify-content(space-between);
+        flex-wrap: wrap;
+        margin-left: -15px;
+        margin-right: -15px;
+         &-tile {
+            flex: 0 0 calc(#{$viewportSize} / 3 - 30px);  
+            @include box-shadow (0px 0px 47px -8px rgba(0,0,0,0.10));
+            @include padding(15);
+            @include margin(0);
+            position: relative;
+            @include flexbox();
+            @include flex-direction(column,vertical);
+            @include justify-content(center);
+            min-height: 130px;  
+            margin: 30px 15px; 
+            @media #{$media-desktop} {
+                flex: 0 0 calc(#{$viewportSize} / 3 - 0px);
+            }
+            @media #{$media-ipadSmall} {
+                  flex: 0 0 calc(#{$viewportSize} / 3 - 0px);
+            } 
+            @media screen and (max-width: 480px) { 
+                flex: 0 0 calc(#{$viewportSize} - 0px); 
+                @include margin(0); 
+                 
+            } 
+            .tile--head {
+                color: $white;
+                @include font-size(16);
+                @extend .font-regular;
+                @include margin-bottom(15);
+                @media #{$media-desktop} {
+                    @include font-size(14);
+                }
+            }
+            .tile--count { 
+                color: $white;
+                @include font-size(35);
+                @extend .font-bold; 
+                @media #{$media-desktop} {
+                    @include font-size(27);
+                }
+            }
+            .tile--icon {
+                position: absolute;
+                right: 15px;
+                top: 15px;
+                width: 55px;
+                height: auto;
+                opacity: 0.33;
+            }
+            &.clr1 {
+                background: #ff4844 none repeat scroll 0 0; 
+            }
+            &.clr2 {
+                background: #e44235 none repeat scroll 0 0; 
+            }
+            &.clr3 {
+                background: #e52b50 none repeat scroll 0 0; 
+            } 
+         }
+    }
+}
+
+/* Home Counter End
+   ================================ */
+.news__wrapper {
+    .verticleSlider {
+        @include margin-bottom(30);
+        
+        ul {
+            li {
+                a {
+                    display: block;
+                    border-bottom: 2px solid $border;
+                    @include padding-bottom(5);
+                    @include margin-bottom(20);
+                    
+                    p {
+                        font-family: $primary-fonts-semiBold;
+                        line-height: 1.4 !important;
+                        
+                        .meta {
+                            color: $grey;
+                            @include font-size(12);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+.services__wrapper {
+    ul {
+        @include flexbox(); 
+        @include justify-content(center);
+        flex-wrap: wrap;
+        background: $borderlight none repeat scroll 0 0;
+        @include padding(1);
+        @include margin-bottom(35);
+        li {
+            display: inline-block;
+            width: calc(100% / 3 - 2px);
+            background: $white none scroll 0 0; 
+            margin: 1px;
+            a {
+                display: block;
+                text-align: center;
+                @include padding(30 0);
+                @include transition(all 0.3s ease);
+                &:hover, &:focus {
+                    background: $borderlight none repeat scroll 0 0;
+                    @include transition(all 0.3s ease);
+                }
+                
+                figure {
+                    img {
+                        width: 50px;
+                        height: auto;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.connect__wrapper {
+    background: $basebg none repeat scroll 0 0; 
+    &.homeGallery {
+        background: $transparent none repeat scroll 0 0;
+        padding: 0 !important; 
+        @include margin-bottom(25);
+    }
+    &-connect {
+        @media #{$media-ipadPortrait} {
+            @include margin-bottom(30);
+        }
+    }
+    .connect--content {
+        background: $white none repeat scroll 0 0 !important; 
+        @include padding(40 30);
+        @include box-shadow (0px 0px 47px -8px rgba(0,0,0,0.10));
+        min-height: 384px;
+        h4 {
+            font-size: 22px !important;
+            text-transform: uppercase;
+            color: $black; 
+            font-family: $primary-fonts-bold;
+        }
+        p {
+            font-size: 14px !important;
+            @include margin-bottom(5); 
+            line-height: 1.8 !important;
+        }
+        ul {
+            li {
+                display: inline-block;
+                
+                a {
+                    width: 35px;
+                    height: 35px;
+                    @include border-radius(100%);
+                    background: $basebg none repeat scroll 0 0;
+                    text-align: center;
+                    line-height: 2.2;
+                    display: block;
+                }
+                + li {
+                    @include margin-left(20);
+                }
+            }
+        }
+    }
+    .gallery--content {
+        ul {
+            overflow: hidden;
+            li {
+                display: inline-block;
+                width: calc(100% / 4 - 0px);
+                max-height: 128px;
+                float: left;
+                @include margin(0);
+                border: 1px solid $white;
+                
+                figure {
+                    img {
+                        object-fit: cover;
+                        height: 128px; 
+                        width: $viewportSize;
+                    }
+                }
+            }
+        }
+    }
+} 

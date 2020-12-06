@@ -1,0 +1,38 @@
+{
+    "name": "csc/iepf",
+    "description": "REC Limited is a public Infrastructure Finance Company in India power sector. The company is a Public Sector Undertaking and finances and promotes rural electrification projects across India",
+    "keywords": ["RECLTD", "REC ", "Government of India"],
+    "homepage": "https://www.recindia.nic.in/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=5.4.0",
+        "yiisoft/yii2": "~2.0.14",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-swiftmailer": "*",
+        "aws/aws-sdk-php": "*",
+        "yiisoft/yii2-redis": "dev-master",
+        "phpoffice/phpexcel" : "*",
+        "phpoffice/phpword" : "v0.16.*",
+        "jeremykendall/php-domain-parser": "*"
+    },
+    "require-dev": {
+        "yiisoft/yii2-codeception": "*",
+        "yiisoft/yii2-debug": "*",
+        "yiisoft/yii2-gii": "*",
+        "yiisoft/yii2-faker": "*"
+    },
+    "config": {
+        "process-timeout": 1800
+    },
+    "scripts": {
+        "post-install-cmd": "php init --env=Development --overwrite=n"
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://asset-packagist.org"
+        }
+    ]
+}

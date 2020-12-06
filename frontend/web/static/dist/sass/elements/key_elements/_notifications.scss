@@ -1,0 +1,201 @@
+/* Notifications section
+================================ */
+
+.notification {
+    width: $viewportSize;
+    &__dropdown {
+        max-width: 320px;
+        min-width: 180px;
+        width: 320px;
+        z-index: 9995;
+        @media #{$media-phone} {
+            max-width: 240px;
+        }
+        &-external {
+            display: block;
+            letter-spacing: 0.5px;
+            overflow: hidden;
+            @include padding(10px 15px);
+            h3 {
+                display: inline-block;
+                float: left;
+                font-size: 13px;
+                margin: 0;
+                padding: 0;
+            }
+            a {
+                background: transparent none repeat scroll 0 0;
+                border: 0 none;
+                clear: inherit;
+                color: #129eff;
+                display: inline-block !important;
+                font-size: 13px;
+                font-weight: 300;
+                margin-top: 0 !important;
+                padding: 0 !important;
+                position: absolute !important;
+                right: 10px;
+                text-transform: none;
+                &:hover, &:focus {
+                    opacity: 1;
+                    color: $blue !important;
+                    background: $transparent none repeat scroll 0 0 !important;
+                }
+            }
+        }
+        li {
+            .dropdown-menu-list {
+                li {
+                    a {
+                        &:hover, &:focus{
+                            opacity: 1;
+                            background: $transparent none repeat scroll 0 0 !important;
+                            span {
+                                color: $blue !important;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    /* Begin notification page style */
+    
+    &__main {
+        background: $white none repeat scroll 0 0;
+        @include padding(15px 20px);
+        &::after, &::before {
+            content: " ";
+            display: table;
+        }
+        &-title {
+            border-bottom: 1px solid $border;
+            display: table;
+            height: 48px;
+            margin-bottom: 0;
+            padding: 0;
+            width: $viewportSize;
+            h3 {
+                display: table-cell;
+                font-size: 20px;
+                position: relative;
+                vertical-align: middle;
+                .badge {
+                    background: $blue none repeat scroll 0 0;
+                    @include text-md ($font-weight: 700, $font-multiplier: 0.86);
+                    height: 22px;
+                    margin: 5px 0 0 10px;
+                    @include padding(3px 8px);
+                    position: absolute;
+                    right: auto;
+                    color: $white;
+                    @include border-radius(50%);
+                }
+            }
+        }
+        &-body {
+            background: $white none repeat scroll 0 0;
+            .notify {
+                width: $viewportSize;
+                &__section {
+                    border-bottom: 1px solid $border;
+                    margin: 0;
+                    @include padding(10px);
+                    @include transition(all 0.3s ease-in);
+                    &:nth-child(2n+1) {
+                        background: lighten($offwhite, 3.5%);
+                    }
+                    &:hover {
+                        background: lighten($offwhite, 1.5%);
+                        .notify__main-details-actions {
+                            display: block;
+                        }
+                    }
+                }
+                &__profilePicture {
+                    float: left;
+                    margin-right: 20px;
+                    width: 40px;
+                }
+                &__main {
+                    overflow: hidden;
+                    position: relative;
+                    &-info {
+                        width: $viewportSize;
+                        &:before, &:after {
+                            content: "";
+                            display: table;
+                            font-size: 0;
+                        }
+                        &:after {
+                            clear: both;
+                        }
+                        &-author {
+                            display: inline-block;
+                            @include text-md($color: #060606, $font-weight: 600, $font-multiplier: 1.15);
+                            float: left;
+                            margin: 0 0 10px;
+                        }
+                        &-date{
+                            @include text-md($color: #bababa, $font-multiplier: 0.86);
+                            display: inline-block;
+                            float: right;
+                            margin: 0;
+                        }
+                    }
+                    &-text {
+                        @include text-md($line-height: 1.4, $color: #3a444f);
+                        margin: 0 0 15px;
+
+                    }
+                    &-details {
+                        height: 20px;
+                        margin: 0;
+                        &-status {
+                            @include text-md($color: #8e98a7, $font-multiplier: 1);
+                            float: left;
+                            .badge{
+                                &.badge-empty {
+                                    display: inline-block;
+                                    float: left;
+                                    height: 8px;
+                                    margin-right: 6px;
+                                    margin-top: 6px;
+                                    min-height: 8px;
+                                    min-width: 8px;
+                                    padding: 0;
+                                    width: 8px;
+                                }
+                            }
+                        }
+                        &-actions {
+                            display: none;
+                            float: right;
+                            list-style: outside none none;
+                            margin: -3px 0 0;
+                            padding: 0;
+                            @include transition(all 0.3s ease-in);
+                            > li {
+                                float: left;
+                                margin: 0;
+                                @include padding(0 7px);
+                                a {
+                                    color: #949dac;
+                                    &:hover {
+                                        color: $blue;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &.bordered {
+            border: 1px solid $border;
+        }
+    }
+    
+    
+    /* End notification page style */
+}

@@ -1,0 +1,349 @@
+/* Global classes
+================================ */
+.upper { 
+    text-transform: uppercase; 
+}
+.fullwidth { 
+    width: $viewportSize !important;
+}
+.green-color {
+    color: $green;
+}
+.white {
+    &__bg {
+        background: $white !important;
+    }
+    &__color {
+        color: $white !important;
+    }
+}
+.red {
+    &__bg {
+        background: $red !important;
+    }
+    &__color {
+        color: $red !important;
+    }
+}
+.orange {
+    &__bg {
+        background: $act_Orange !important;
+    }
+    &__color {
+        color: $act_Orange !important;
+    }
+}
+.blue {
+    &__bg {
+        background: $act_Blue !important;
+    }
+    &__color {
+        color: $act_Blue !important;
+    }
+}
+.green {
+    &__bg {
+        background: $act_Green !important;
+    }
+    &__color {
+        color: $act_Green !important;
+    }
+}
+.yellow {
+    &__bg {
+        background: $act_YellowOrange !important;
+    }
+    &__color {
+        color: $act_YellowOrange !important;
+    }
+}
+.dark {
+    &__bg {
+        background: #f4d79c !important;
+    }
+    &__color {
+        color: #f4d79c !important;
+    }
+}
+.light {
+    &__bg {
+        background: #fbe3b2 !important;
+    }
+    &__color {
+        color: #fbe3b2 !important;
+    }
+} 
+.badge, .label {
+    &-success {
+        background: $success none repeat scroll 0 0;
+    }
+    &-danger {
+        background: $error none repeat scroll 0 0;
+    }
+    &-warning {
+        background: $warning none repeat scroll 0 0;
+    }
+    &-info {
+        background: $info none repeat scroll 0 0;
+    }
+}
+.content {
+    &__wrap {
+        width: calc(#{$viewportSize} - 10%);
+        margin: 0 auto;
+        @media #{$media-ipadPortrait} {
+            width: $viewportSize;
+        }
+        &-full {
+            width: $viewportSize;
+        }
+    } 
+}
+.image-covered {
+    @include background-size(cover);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+.mob__fullwidth {
+    @media #{$media-phone} { 
+        width: $viewportSize;
+    }
+    &-599 {
+        @media #{$media-tablet} {
+            width: $viewportSize;
+        }
+    }
+}
+.text-link {
+    color: $blue;
+    border-bottom: 1px solid $blue;
+    display: inline-block;
+    cursor : pointer;
+    position: relative;
+    @include transition(all 0.6s ease-in);
+    &:after {
+        content: '';
+        width: 0px;
+        height: 1px;
+        background: darken($blue, 20%);
+        @include transition(all 0.6s ease-in);
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+    }
+    &:hover, &:focus {
+        color: darken($blue, 20%);
+        &:after {
+            width: $viewportSize;
+        }
+    }
+}
+.content__preview {
+    .page {
+        &__highlight {
+            background: $offwhite none repeat scroll 0 0;
+            @include padding(10px 20px);
+            position: relative;
+            margin-bottom: 25px;
+            span {
+                position: absolute;
+                top: 5%;
+                background: $white none repeat scroll 0 0;
+                @include translate(0, -50%);
+                @include padding(0px 15px);
+                @include text-md($font-multiplier: 0.8572);
+            }
+            h2 {
+                margin-top: 15px;
+                color: $blue;
+            }
+        }
+    }
+    .modal-footer {
+        @include padding(0px);
+        border: none;
+        .footerSection {
+            ul li {
+                width: 50%;
+                @media #{$media-ipadSmall} {
+                    width: $viewportSize;
+                }
+            }
+        }
+    }
+}
+/* Begin table icons */
+
+.icons { 
+    @include border-radius(50%);
+    border: 1px solid darken($border, 10%); 
+    @include size(30px);
+    text-align: center;
+    display: inline-block;
+    padding-top: 3px;
+    @media #{$media-phone} {
+        @include border-radius(0%);
+        border: none; 
+        @include size(auto);
+        padding-top: 0px; 
+    }
+    &__edit {
+        color: $blk50 !important;
+    }
+    &__delete {
+        color: $red !important;
+    }
+    &__view {
+        color: $blue !important;
+    }
+    &__download {
+        @include text-md($font-multiplier: 1.1429, $line-height: 1);
+        color: $green !important;
+        &:hover, &:focus {
+            color: darken($green, 20%) !important;
+        }
+    }
+    &:hover, &:focus {
+        &.icons__edit {
+            color: darken($blk50, 20%) !important; 
+        }
+        &.icons__delete {
+            color: darken($red, 20%) !important; 
+        }
+        &.icons__view {
+            color: darken($blue, 20%) !important; 
+        }
+        
+    }
+    + .icons {
+        margin-left: 12px; 
+    }
+}
+
+/* End table icons */
+
+/* Begin Form Head  */
+.formHead {
+    cursor: pointer;
+    font-size: 16.1px;
+    font-weight: 400;
+    line-height: 1.46;
+    letter-spacing: -.0135em;
+    color: #666;
+    margin-bottom: 8px;
+
+}
+/* End Form Head */
+
+
+/* Begin Theme Shadow */
+.themeShasow {
+    @include box-shadow (-4px 10px 53px -23px rgba(0,0,0,0.75));
+}
+
+/* End Theme Shadow */
+
+
+ul {
+    &.col-4 { 
+        overflow: hidden;
+        
+        li {
+            width: 25%;
+            margin: 0;
+            display: inline-block;
+            float: left;
+            overflow: hidden;
+            
+            @media #{$media-ipadSmall} {
+                width: 50%;
+                &:nth-child(3) {
+                    border-left: none;
+                }
+                &:nth-child(3), &:last-child{
+                    border-top: 2px solid $white;
+                }
+            }
+            @media #{$media-tablet} {
+                width: 100%;
+                + li {
+                    border-left: none;
+                    border-top: 2px solid $white;
+                }
+            }
+            
+            a {
+                display: block;
+                
+            }
+            
+            +li { 
+                border-left: 2px solid $white;
+               
+            }
+        }
+    }
+    &.col-3 {
+        overflow: hidden;
+        
+        li {
+            width: 33.3333%;  
+            margin: 15px 0px 30px 0px;
+            display: inline-block;
+            float: left;
+            overflow: hidden;
+            a {
+                display: block;
+            }
+            @media #{$media-ipadSmall} {
+               width: 100%;   
+            }
+        }
+    }
+    &.col-5 {
+        overflow: hidden; 
+        
+        li {
+            width: 20%;  
+            margin: 15px 0px 30px 0px;
+            display: inline-block;
+            float: left;
+            overflow: hidden;
+            a {
+                display: block;
+            }
+            @media #{$media-ipadSmall} {
+               width: 100%;   
+            }
+        } 
+    }
+}
+.covered {
+    background-size: cover !important;  
+}
+.overlay { 
+    &__orange {
+        background-image: linear-gradient(#fc9d43, #9e632b);  
+    } 
+    &__darkPurple {
+        background-image: linear-gradient(#775cb0, #3f2f63); 
+    } 
+    &__skyBlue { 
+         background-image: linear-gradient(#37a5c5, #1b6479);  
+    }
+    &__red {  
+         background-image: linear-gradient(#e7564e, #8d2722);  
+    }     
+    &__green { 
+       background-image: linear-gradient(#d8e667, #778127); 
+    }
+      
+}   
+/* Begin Home Section Css */ 
+.home_wrapper {
+    &-content {
+        min-height: 600px;    
+    }
+}
+/* End Home Section Css */ 
+

@@ -1,0 +1,67 @@
+/* Nested Navigation section
+================================ */
+.nestable {
+    background: $defaultbg none repeat scroll 0 0;
+    @include padding(30px 10px);
+    &__wrapper {
+        ul {
+            li {
+                display: block;
+                background: $white none repeat scroll 0 0;
+                overflow: hidden;
+                position: relative;
+                @include box-shadow(0 0 7px 0 rgba(44, 44, 58, 0.15));
+                > ul li {
+                    .nestable__wrapper-content {
+                        margin-left: 20px;
+                        width: calc(100% - 20px);
+                    }
+                    > ul li {
+                        .nestable__wrapper-content {
+                            margin-left: 40px;
+                            width: calc(100% - 40px);
+                        }
+                        > ul li {
+                            .nestable__wrapper-content {
+                                margin-left: 60px;
+                                width: calc(100% - 60px);
+                            }
+                            > ul li {
+                                .nestable__wrapper-content {
+                                    margin-left: 80px;
+                                    width: calc(100% - 80px);
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        &-content { 
+            width: $viewportSize;
+            position: relative;
+            @include padding(20px 30px 20px 40px); 
+            overflow: hidden;
+            &:before { 
+                content: '\f10c';  
+                position: absolute;
+                font-family: $iconfont;
+                top: 50%;
+                left: 15px;
+                @include translate(0, -50%);
+                @include text-md($font-multiplier: 0.8572, $color: $blue); 
+            }
+            a {
+                display: inline-block;
+            }
+            .icons {
+                &__sets {
+                    position: absolute;
+                    right: 20px;
+                    top: 50%;
+                    @include translate(0, -50%);
+                }
+            }
+        } 
+    }
+}

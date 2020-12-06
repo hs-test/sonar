@@ -1,0 +1,42 @@
+/* table section
+================================ */
+
+.table {
+    &--customized {
+        thead {
+            th {
+                @extend .font-bold;
+                @include font-size(16);
+                color: $zblack;
+                border: none; 
+            }
+        }
+        tbody {
+            td {
+                background: #f9f6f3 none repeat scroll 0 0;
+                border-top: 15px solid $white;
+                position: relative;
+                vertical-align: middle;
+                @extend .font-bold;
+                @include font-size(16);
+                color: $zblack;
+                span {
+                    display: block;
+                    @include font-size(12);
+                    @extend .font-regular;
+                    margin-top: 5px;
+                }
+                &:after {
+                    content: '';
+                    position: absolute;
+                    bottom: 0;
+                    left:0;
+                    width: $viewportSize;
+                    height: 1px;
+                    display: block;
+                    background: #adacac none repeat scroll 0 0;
+                }
+            }
+        }
+    }
+}

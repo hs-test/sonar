@@ -1,0 +1,463 @@
+/* Global classes
+================================ */
+.upper {
+    text-transform: uppercase;
+}
+
+.fullwidth {
+    width: $viewportSize !important;
+}
+
+.green-color {
+    color: $green;
+}
+
+.white {
+    &__bg {
+        background: $white !important;
+    }
+
+    &__color {
+        color: $white !important;
+    }
+}
+
+.red {
+    &__bg {
+        background: $red !important;
+    }
+
+    &__color {
+        color: $red !important;
+    }
+}
+
+.green {
+    &__bg {
+        background: $green !important;
+    }
+
+    &__color {
+        color: $green !important;
+    }
+}
+
+.orangePeach {
+    &__bg {
+        background: $themePeach2 !important;
+    }
+
+    &__color {
+        color: $themePeach2 !important;
+    }
+}
+
+.badge,
+.label {
+    &-success {
+        background: $success none repeat scroll 0 0 !important;
+    }
+
+    &-danger {
+        background: $error none repeat scroll 0 0 !important;
+    }
+
+    &-warning {
+        background: $warning none repeat scroll 0 0 !important;
+    }
+
+    &-info {
+        background: $info none repeat scroll 0 0 !important;
+    }
+}
+
+.content {
+    &__wrap {
+        width: calc(#{$viewportSize} - 10%);
+        margin: 0 auto;
+
+        @media #{$media-ipadPortrait} {
+            width: $viewportSize;
+        }
+
+        &-full {
+            width: $viewportSize;
+        }
+    }
+}
+
+.image-covered {
+    @include background-size(cover);
+    background-position: center center;
+    background-repeat: no-repeat;
+}
+
+.mob__fullwidth {
+    @media #{$media-phone} {
+        width: $viewportSize;
+    }
+
+    &-599 {
+        @media #{$media-tablet} {
+            width: $viewportSize;
+        }
+    }
+}
+
+.text-link {
+    color: $blue;
+    border-bottom: 1px solid $blue;
+    display: inline-block;
+    cursor: pointer;
+    position: relative;
+    @include transition(all 0.6s ease-in);
+
+    &:after {
+        content: '';
+        width: 0px;
+        height: 1px;
+        background: darken($blue, 20%);
+        @include transition(all 0.6s ease-in);
+        position: absolute;
+        bottom: -1px;
+        left: 0;
+    }
+
+    &:hover,
+    &:focus {
+        color: darken($blue, 20%);
+
+        &:after {
+            width: $viewportSize;
+        }
+    }
+}
+
+.content__preview {
+    .page {
+        &__highlight {
+            background: $offwhite none repeat scroll 0 0;
+            @include padding(10px 20px);
+            position: relative;
+            margin-bottom: 25px;
+
+            span {
+                position: absolute;
+                top: 5%;
+                background: $white none repeat scroll 0 0;
+                @include translate(0, -50%);
+                @include padding(0px 15px);
+                @include text-md($font-multiplier: 0.8572);
+            }
+
+            h2 {
+                margin-top: 15px;
+                color: $blue;
+            }
+        }
+    }
+
+    .modal-footer {
+        @include padding(0px);
+        border: none;
+
+        .footerSection {
+            ul li {
+                width: 50%;
+
+                @media #{$media-ipadSmall} {
+                    width: $viewportSize;
+                }
+            }
+        }
+    }
+}
+
+.scrollingEvent {
+    max-height: 250px;
+}
+
+/* Begin table icons */
+
+/*.icons { 
+    @include border-radius(50%);
+    border: 1px solid darken($border, 10%); 
+    @include size(30px);
+    text-align: center;
+    display: inline-block;
+    padding-top: 3px;
+    @media #{$media-phone} {
+        @include border-radius(0%);
+        border: none; 
+        @include size(auto);
+        padding-top: 0px; 
+    }
+    &__edit {
+        color: $blk50 !important;
+    }
+    &__delete {
+        color: $red !important;
+    }
+    &__view {
+        color: $blue !important;
+    }
+    &__mark {
+        color: $success !important; 
+    }
+    &__download {
+        @include text-md($font-multiplier: 1.1429, $line-height: 1);
+        color: $green !important;
+        &:hover, &:focus {
+            color: darken($green, 20%) !important;
+        }
+    }
+    &:hover, &:focus {
+        &.icons__edit {
+            color: darken($blk50, 20%) !important; 
+        }
+        &.icons__delete {
+            color: darken($red, 20%) !important; 
+        }
+        &.icons__view {
+            color: darken($blue, 20%) !important; 
+        }
+        
+    }
+    + .icons {
+        margin-left: 12px; 
+    }
+    &--inside-table {
+        @include size(inherit);
+        border: none;
+        font-size: ($baseFontSize *1) + 4;
+        line-height: 20px;
+        @include padding(0);
+    }
+}*/
+
+/* End table icons */
+
+.permission {
+    &__bg1 {
+        background: $themelightBlue none repeat scroll 0 0;
+        color: $white;
+    }
+
+    &__bg2 {
+        background: $yellow none repeat scroll 0 0;
+        color: $white;
+    }
+
+    &__bg3 {
+        background: $success none repeat scroll 0 0;
+        color: $white;
+    }
+}
+
+.genderIcon {
+    @include text-md($font-multiplier: 1.2858, $font-weight: bold);
+
+    &.female {
+        color: #f78f8f;
+    }
+
+    &.male {
+        color: #4587c7;
+    }
+}
+
+.attendace-detail {
+    @include padding(10px 30px !important);
+
+    .icons {
+        cursor: default;
+        color: darken($border, 10%);
+
+        &.active {
+            &.icons {
+                &__present {
+                    background: $success none repeat scroll 0 0;
+                    color: $white;
+                    border-color: darken($success, 10%);
+                }
+
+                &__absent {
+                    background: $error none repeat scroll 0 0;
+                    color: $white;
+                    border-color: darken($error, 10%);
+                }
+
+                &__leave {
+                    background: $warning none repeat scroll 0 0;
+                    color: $white;
+                    border-color: darken($warning, 10%);
+                }
+            }
+        }
+    }
+}
+
+.scrollingVertical {
+    max-height: 550px;
+
+    @media #{$media-ipadPortrait} {
+        overflow-y: auto;
+    }
+}
+
+.portal-info {
+    margin-top: 5px;
+
+    .badge {
+        @include padding(5px 10px);
+    }
+
+    &-2 {
+        margin-top: 0px;
+
+        span {
+            @include text-md($color: $white, $line-height: 1.2, $font-multiplier: 1);
+            font-family: $primarysmBold;
+        }
+    }
+}
+
+.taggingStyle {
+    &__wrapper {
+        ul {
+            li {
+                width: 155px;
+                margin-bottom: 10px;
+                float: left;
+
+                a {
+                    display: block;
+                    width: 145px;
+                    background: $themeActive none repeat scroll 0 0;
+                    @include border-radius(4px);
+                    @include padding(12px 8px);
+                    color: $white;
+                    cursor: default;
+
+                    span {
+                        @include size(20px);
+                        float: right;
+                        position: relative;
+                        cursor: pointer;
+                        background: rgba($grey, 0.5);
+                        @include border-radius(50%);
+
+                        &:before {
+                            content: '\f00d';
+                            position: absolute;
+                            font-size: 13px;
+                            font-family: $iconfont;
+                            left: 50%;
+                            top: 50%;
+                            @include translate(-50%, -50%);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.state__wise-data {
+    background: $white none repeat scroll 0 0;
+    margin-top: 25px;
+}
+
+.map__wrapper {
+    position: fixed;
+    right: 0;
+    top: 39px;
+    width: 100%;
+    max-width: 500px;
+    height: calc(100vh - 39px);
+    @include flexbox();
+    @include align-items(center);
+    @include flex-direction(row, horizontal);
+    flex-wrap: wrap;
+    @include justify-content(center);
+
+    @media screen and (max-width:1540px) {
+        width: 380px;
+    }
+
+    &-selected {
+        span {
+            background: $grey none repeat scroll 0 0;
+            @include border-radius(6px);
+            color: $zblack;
+            font-size: 18px;
+            @include padding(8px 20px);
+
+            &.jammu-kashmir {
+                background: #e76a73 none repeat scroll 0 0;
+            }
+        }
+    }
+}
+
+.home__wrapper {
+    width: calc(100% - 500px);
+
+    @media #{$media-ipadPortrait} {
+        padding-top: 0px;
+    }
+
+    @media screen and (max-width:1540px) {
+        width: calc(100% - 380px);
+    }
+}
+
+.tooltip-custom {
+    display: none;
+    position: absolute;
+    border: 1px solid #333;
+    background-color: #161616;
+    border-radius: 5px;
+    padding: 10px;
+    color: #fff;
+    font-size: 12px Arial;
+}
+
+.noBorder {
+    tbody, tfoot {
+        tr {
+            td {
+                border-top: 0px !important;
+            }
+        }
+    }
+}
+.fixWidTbale {
+    .table {
+        tbody, thead, tfoot {
+            tr {
+                td, th {
+                    width: 250px !important; 
+                    word-wrap: break-word;
+                    white-space: normal !important;
+                    &:first-child {
+                        width: auto;
+                    }    
+                }
+                
+            }
+        }
+    }
+    >.table {
+        tbody, thead, tfoot {
+            tr {
+                td, th { 
+                    &:first-child {
+                        width: auto;
+                    }    
+                }
+                
+            }
+        }
+    } 
+}

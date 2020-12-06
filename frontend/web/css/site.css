@@ -1,0 +1,209 @@
+html,
+body {
+    height: 100%;
+}
+
+.wrap {
+    min-height: 100%;
+    height: auto;
+    margin: 0 auto -60px;
+    padding: 0 0 60px;
+}
+
+.wrap > .container {
+    padding: 70px 15px 20px;
+}
+
+.footer {
+    height: 60px;
+    background-color: #f5f5f5;
+    border-top: 1px solid #ddd;
+    padding-top: 20px;
+}
+
+.jumbotron {
+    text-align: center;
+    background-color: transparent;
+}
+
+.jumbotron .btn {
+    font-size: 21px;
+    padding: 14px 24px;
+}
+
+.not-set {
+    color: #c55;
+    font-style: italic;
+}
+
+/* add sorting icons to gridview sort links */
+a.asc:after, a.desc:after {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+    font-family: 'Glyphicons Halflings';
+    font-style: normal;
+    font-weight: normal;
+    line-height: 1;
+    padding-left: 5px;
+}
+
+a.asc:after {
+    content: "\e151";
+}
+
+a.desc:after {
+    content: "\e152";
+}
+
+.sort-numerical a.asc:after {
+    content: "\e153";
+}
+
+.sort-numerical a.desc:after {
+    content: "\e154";
+}
+
+.sort-ordinal a.asc:after {
+    content: "\e155";
+}
+
+.sort-ordinal a.desc:after {
+    content: "\e156";
+}
+
+.grid-view td {
+    white-space: nowrap;
+}
+
+.grid-view .filters input,
+.grid-view .filters select {
+    min-width: 50px;
+}
+
+.hint-block {
+    display: block;
+    margin-top: 5px;
+    color: #999;
+}
+
+.error-summary {
+    color: #a94442;
+    background: #fdf7f7;
+    border-left: 3px solid #eed3d7;
+    padding: 10px 20px;
+    margin: 0 0 15px 0;
+}
+
+/* align the logout "link" (button in form) of the navbar */
+.nav > li > form {
+    padding: 8px;
+}
+
+@media(max-width:768px) {
+	.nav li > form {
+	    padding: 3px;
+	}
+}
+
+.nav > li > form > button:hover {
+    text-decoration: none;
+}
+
+
+/* classSection__wrapper css start */
+.classSection__wrapper .form-group .grouping__leftAligned {
+    margin-top: 10px;
+}
+.permission-section li {
+    margin-bottom: 20px;
+}
+.permission-section .permissionHead {
+    background: #f9f9fa;
+    padding: 7px 15px;
+}
+.permission-section .permissionHead label {
+    margin-bottom:  0px;
+}
+/*.permission-section .permissionSection label {
+    margin-bottom: 25px;
+}*/
+.permission-section .permissionSection {
+    background: #fff;
+    padding: 5px 15px 0px 15px;    
+    border: 2px solid #f9f9fa;
+}
+.permissionHead label {
+    font-weight: bold;
+}
+.permission-section .permissionSection .custom-checkbox {
+    float: left !important;
+}
+.permission-section .permissionSection .viewDetail {
+    display: inline-block;
+    float: left;
+    padding-left: 30px;
+}
+.permission-section .permissionSection .viewDetail a {
+    line-height: 1.9;
+    color: #d0d1da;
+}
+.permission-section .permissionSection .viewDetail a:hover {
+   color: #999bb1; 
+}
+.permission-section .permissionSection .viewDetail a:focus, .permission-section .permissionSection .viewDetail a.active {
+   color: #2ac81e; 
+}
+.permission-section .custom-checkbox span::before {
+    border-color: #666;
+}
+.permission-section .custom-checkbox input[type="checkbox"]:checked + span::before {
+    border-color: #666;
+}
+.sectionContent {
+    display: block;
+    overflow: hidden;
+}
+.sectionInfo {
+    background: #f9f9fa;
+    padding: 10px 15px; 
+    
+} 
+.sectionInfo .widget__wrapper-searchFilter {
+    padding: 0;
+}
+.sectionInfo label {
+    float: left;
+    display: inline-block;
+    line-height: 2.6;
+    margin-bottom: 0; 
+}
+.sectionInfo input {
+    display: inline-block !important;
+    width: calc(100% - 80px);
+    margin-left: 15px;
+}
+.sectionInfo .form-group {
+    margin-bottom: 0;
+}
+.sectionInfo .form-group .grouping button + a {
+    margin-left: 4px;
+}
+
+
+
+@media(max-width:992px) { 
+    .grouping {
+        margin: 15px 0px;
+    }
+    .sectionInfo label {
+        float: none;
+        margin-bottom: 5px;
+    }
+    .sectionInfo input  {
+        width: 100%;
+        margin-left: 0;
+        display: block;
+    }
+}
+/* classSection__wrapper css end */

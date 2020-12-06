@@ -1,0 +1,62 @@
+/* Modal section 
+================================ */
+.modal {
+    &__wrapper {
+        @media #{$media-ipadSmall} {
+            width: 95%;
+            margin: 0 auto;
+        }
+        .modal-dialog {
+            margin: 70px auto;
+            .modal-content {
+                @include border-radius(0);
+                .modal-header {
+                    background-color: $white;
+                    border-bottom: 0 solid transparent;
+                    @include border-radius(0);
+                    @include text-md($color: $themePeach2, $font-multiplier: 1.28);
+                    max-height: 76px;
+                    min-height: inherit;
+                    overflow: hidden;
+                    @include padding(20px);
+                    text-align: left;
+                    .close {
+                        @include text-md($color: $themePeach2, $font-multiplier: 2.86, $line-height: 1);
+                        opacity: 1;
+                        position: absolute;
+                        right: 24px;
+                        text-shadow: none;
+                        top: 15px;
+                    }
+                    &:before {
+                        content: '';
+                        background: rgba(239,62,54,1);
+                        background: -moz-linear-gradient(left, rgba(239,62,54,1) 0%, rgba(239,62,54,1) 25%, rgba(171,186,47,1) 25%, rgba(171,186,47,1) 50%, rgba(245,122,39,1) 50%, rgba(245,122,39,1) 75%, rgba(25,181,233,1) 75%, rgba(25,181,233,1) 100%);
+                        background: -webkit-gradient(left top, right top, color-stop(0%, rgba(239,62,54,1)), color-stop(25%, rgba(239,62,54,1)), color-stop(25%, rgba(171,186,47,1)), color-stop(50%, rgba(171,186,47,1)), color-stop(50%, rgba(245,122,39,1)), color-stop(75%, rgba(245,122,39,1)), color-stop(75%, rgba(25,181,233,1)), color-stop(100%, rgba(25,181,233,1)));
+                        background: -webkit-linear-gradient(left, rgba(239,62,54,1) 0%, rgba(239,62,54,1) 25%, rgba(171,186,47,1) 25%, rgba(171,186,47,1) 50%, rgba(245,122,39,1) 50%, rgba(245,122,39,1) 75%, rgba(25,181,233,1) 75%, rgba(25,181,233,1) 100%);
+                        background: -o-linear-gradient(left, rgba(239,62,54,1) 0%, rgba(239,62,54,1) 25%, rgba(171,186,47,1) 25%, rgba(171,186,47,1) 50%, rgba(245,122,39,1) 50%, rgba(245,122,39,1) 75%, rgba(25,181,233,1) 75%, rgba(25,181,233,1) 100%);
+                        background: -ms-linear-gradient(left, rgba(239,62,54,1) 0%, rgba(239,62,54,1) 25%, rgba(171,186,47,1) 25%, rgba(171,186,47,1) 50%, rgba(245,122,39,1) 50%, rgba(245,122,39,1) 75%, rgba(25,181,233,1) 75%, rgba(25,181,233,1) 100%);
+                        background: linear-gradient(to right, rgba(239,62,54,1) 0%, rgba(239,62,54,1) 25%, rgba(171,186,47,1) 25%, rgba(171,186,47,1) 50%, rgba(245,122,39,1) 50%, rgba(245,122,39,1) 75%, rgba(25,181,233,1) 75%, rgba(25,181,233,1) 100%);
+                        filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ef3e36', endColorstr='#19b5e9', GradientType=1 );
+                        height: 5px;
+                        width: 100%;
+                        position: absolute;
+                        left: 0;
+                        top: 0;
+                    }
+                }
+                .modal-body {
+                    background-color: $defaultbg;
+                    @include text-md($color: $black, $font-multiplier: 1.15);
+                    @include padding(25px 15px);
+                    p {
+                        @include text-md($color: $black, $font-multiplier: 1.15);
+                    }
+                }
+                .modal-footer {
+                    background-color: $defaultbg;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,225 @@
+/* Main Navigation section
+================================ */
+.navigation {
+    &__wrapper {
+        
+        &-main { 
+            width: $viewportSize;
+        }
+        &-menu {  
+            &-icon {
+                display: none; 
+                @include font-size(16);
+                color: $zblack;
+                @include padding(16 24);
+                @include transition(all 0.3s ease);
+                cursor: pointer;
+                float: left;
+                @media #{$media-ipadPortrait} {
+                    display: block; 
+                }
+            }
+             
+            > .menu-section { 
+                @media #{$media-ipadPortrait} {
+                    display: none; 
+                }
+                > li {
+                    display: inline-block;
+                    position: relative; 
+                    float: left;
+                    > a { 
+                        display: block;
+                        @include font-size(14);
+                        color: $zblack; 
+                        @include transition(all 0.3s ease);
+                        @include padding(5 0);
+                        @media #{$media-desktop} {
+                            @include font-size(14); 
+                        }
+                        
+                        span {
+                            background: $grey none repeat scroll 0 0;
+                            width: 36px;
+                            height: 36px;
+                            border-radius: 100%;
+                            text-align: center;
+                            color: $zblack; 
+                            @include font-size(14);
+                            line-height: 36px;
+                            @include transition(all 0.3s ease);
+                            @include margin-right(5);
+                        }
+                        
+                    }
+                    &.dropdown {
+                        @include transition(all 0.3s ease);
+                        > a {
+                            &:after {
+                                content:'\f107';
+                                font-family: $iconfont;
+                                color: $white;
+                                @include font-size(16);
+                                @include padding-left(8);
+                                @include transition(all 0.3s ease); 
+                                background: transparent none repeat scroll 0 0; 
+                                @media #{$media-desktop} {
+                                     @include font-size(14);
+                                     line-height: auto !important;
+                                }
+                            }
+                        }
+                        &:hover, &:focus {
+                            .sub-menu {
+                                @include opacity(1);
+                                visibility: visible;
+                                top: 54px; 
+                            }
+                            > a {
+                                &:after { 
+                                    background: transparent none repeat scroll 0 0;
+                                }
+                            }
+                        }
+                    }
+                    &:hover, &:focus {
+                        > a, > a:after {
+                            color: $orange; 
+                             @include transition(all 0.3s ease);
+                        }
+                        a {
+                            span { 
+                                color: $white;
+                                background: $orange none repeat scroll 0 0;
+                                 @include transition(all 0.3s ease);
+                            } 
+                        }
+                    }
+                    
+                    /* Begin submenu style */
+                    .sub-menu, .sub-sub-menu {
+                        position: absolute;
+                        top: 70px;
+                        left: 0;
+                        background: $transparent none repeat scroll 0 0;
+                        width: 240px;
+                        @include opacity(0);
+                        visibility: hidden;
+                        z-index: 10; 
+                        @include transition(all 0.3s ease);   
+                        -webkit-box-shadow: 0px 51px 37px 0px rgba(0,0,0,0.1);
+                        -moz-box-shadow: 0px 51px 37px 0px rgba(0,0,0,0.1);
+                        box-shadow: 0px 51px 37px 0px rgba(0,0,0,0.1);
+                        li {
+                            position: relative; 
+                            a {
+                                display: block;
+                                border-bottom: 1px dashed $border;
+                                @include font-size(14); 
+                                line-height: 1.4;
+                                color: $black;
+                                @include padding(15 20);
+                                @include transition(all 0.3s ease);
+                                font-family: $primary-fonts-medium;
+                                background: $white none repeat scroll 0 0;
+                                 
+                                &:hover, &:focus {
+                                    color: $orange;
+                                    background: $white none repeat scroll 0 0; 
+                                }
+                            }
+                            &:last-child {
+                                a {
+                                    border-bottom: none;
+                                }
+                            }
+                        }
+                        &::before {
+                            content:''; 
+                            display: block;
+                            width: 0;
+                            height: 0;
+                            border-left: 15px solid transparent;
+                            border-right: 15px solid transparent;
+                            border-bottom: 15px solid $white;
+                            margin-left: 20px;
+                        }
+                    }
+                    .sub-sub-menu {
+                        left: 200px;
+                        top: 20px;
+                        border-left: 2px solid lighten($black, 5%);  
+                    }
+                    .sub-menu {
+                        li {
+                            &.dropdown {
+                                > a {
+                                    &:after {
+                                        content:'\f105';
+                                        font-family: $iconfont;
+                                        color: $white;
+                                        @include font-size(16);
+                                        @include padding-left(8);
+                                        @include transition(all 0.3s ease);
+                                        float: right;
+                                    }
+                                }
+                                &:hover, &:focus {
+                                    .sub-sub-menu {
+                                        @include opacity(1);
+                                        visibility: visible;
+                                        top: 0px;
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                    
+                    &.active {
+                        a {
+                            color: $orange; 
+                            
+                            span {
+                                color: $white;
+                                background: $orange none repeat scroll 0 0;
+                            }
+                        }
+                    }
+                    & + li {
+                        margin-left: 30px;
+
+                        @media #{$media-desktop} {
+                            margin-left: 10px;
+                        }
+                    }
+                    &.nav--action {  
+                        a {
+                            @include padding(5 20); 
+                            -webkit-box-shadow: 0px 0px 77px 0px rgba(0,0,0,0.23);
+                            -moz-box-shadow: 0px 0px 77px 0px rgba(0,0,0,0.23);
+                            box-shadow: 0px 0px 77px 0px rgba(0,0,0,0.23);
+                            color: $white;
+                            background: $zblack none repeat scroll 0 0;
+                            @include transition(all 0.3s ease);
+                            border-radius: 5px; 
+                            
+                            span {
+                                color: $white;
+                                background: $transparent;
+                                width: auto;
+                                height: auto;
+                                line-height: auto;
+                            }
+                            
+                            &:hover, &:focus {
+                                background: $orange none repeat scroll 0 0;
+                                @include transition(all 0.3s ease);
+                            }
+                        }
+                    }
+                }
+            }
+        } 
+         
+    }
+}

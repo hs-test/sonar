@@ -1,0 +1,40 @@
+/* Custom Grid
+   ================================ */
+.genneric-section {
+    
+}
+
+
+
+/* contact Page Start
+   ================================ */
+.contact__wrap {
+    background: $white none repeat scroll 0 0;
+    @include padding(20);
+    min-height: 297px;  
+    @include box-shadow (0px 0px 47px -8px rgba(0,0,0,0.15));
+    @include margin-bottom(25);
+    p {
+        color: $black;
+        @include font-size(16);
+        letter-spacing: 0.3px;
+    }
+}
+.location__wrap {
+    background: $white none repeat scroll 0 0;
+    @include padding(20);
+    @include box-shadow (0px 0px 47px -8px rgba(0,0,0,0.15));
+    @include margin-bottom(25); 
+}
+
+/* contact Page End
+   ================================ */
+
+
+
+/* Contact Page Start
+   ================================ */
+ 
+
+/* Contact Page End
+   ================================ */

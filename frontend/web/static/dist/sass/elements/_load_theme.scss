@@ -1,0 +1,141 @@
+/* Loading section
+================================ */
+
+.loading {
+    &__spinner {
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        @include translate(-50%,-50%);
+        z-index: 100;
+        text-align: center;
+        &-overlay {
+            position: fixed;
+            @include size(100%);
+            background: rgba($black, 0.3) none repeat scroll 0 0;
+            z-index: 99;
+            left: 0;
+            top: 0;
+        }
+        .loader {
+            span {
+                display: block;
+            }
+            .text {
+                color: $white;
+            }
+        }
+    }
+    &__wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        @include size(100%);
+
+        .loading__spinner, .loading__spinner-overlay {
+            position: absolute;
+        }
+        &.theme2 {
+            position: relative;
+            .loading__spinner {
+                position: relative;
+                margin-bottom: 20px;
+                top: 0;
+                @include translate(-50%, 0);
+                &-overlay {
+                    display: none;
+                }
+                .loader .text {
+                    color: $themeBlue;
+                }
+            }
+        }
+        &.theme3 {
+            .loading__spinner {
+                &-overlay {
+                    background: rgba($white,0.8) none repeat scroll 0 0;
+                    left: -230px;
+                    width: calc(#{$viewportSize} + 230px);
+                    @media #{$media-ipadPortrait} {
+                        left: 0px;
+                        width: $viewportSize;
+                    }
+                }
+                position: fixed;
+                width: 400px;
+                height: 225px;
+                background: $white none repeat scroll 0 0;
+                @include box-shadow(0px 0px 20px 0px rgba($zblack,0.2));
+                @include padding(40px 25px 25px);
+                .loader {
+                    .text {
+                        color: $blk50;
+                    }
+                    &--extendInfo {
+                        ul {
+                            overflow: hidden;
+                            width: 100%;
+                            margin-top: 10px;
+                            li {
+                                width: 50%;
+                                float: left;
+                                margin-top: 15px;
+                                text-align: left;
+                                padding-bottom: 5px; 
+                                &:nth-child(even) {
+                                    text-align: right;
+                                }
+                                span {
+                                    color: $blk50;
+                                    font-family: $montserratregular;
+                                    position: relative;
+                                    &:before {
+                                        content: '';
+                                        position: absolute;
+                                        z-index: 1;
+                                        left: 0;
+                                        bottom: -5px;
+                                        height: 3px;
+                                        width: 20px;
+                                        @include border-radius(25px);
+                                        background: $blk50 none repeat scroll 0 0;
+                                    }
+                                    &.value {
+                                        font-size: ($baseFontSize * 1) + 1;
+                                        &:before {
+                                            display: none;
+                                        }
+                                    }
+                                }
+                                &.sent {
+                                    span {
+                                        color: $green;
+                                        &:before {
+                                            background: $green none repeat scroll 0 0;
+                                        }
+                                    }
+                                }
+                                &.remaining {
+                                    span {
+                                        color: $yellow;
+                                        &:before {
+                                            background: $yellow none repeat scroll 0 0;
+                                        }
+                                    }
+                                }
+                                &.fail {
+                                    span {
+                                        color: $red;
+                                        &:before {
+                                            background: $red none repeat scroll 0 0;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+} 

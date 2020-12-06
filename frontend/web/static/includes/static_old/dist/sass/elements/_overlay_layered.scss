@@ -1,0 +1,57 @@
+/* Overlay section
+================================ */
+
+.overlay-button {
+    left: 0;
+    top: 0%;
+    right: 0px;
+    bottom: 0px;
+    width: $viewportSize;
+    height: 102%;
+    text-align: center;
+    position: absolute;
+    visibility:hidden;
+    -ms-filter:"progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+    filter:progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+    opacity:0;
+    -webkit-transition:opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -webkit-transform 0.2s cubic-bezier(0.455,0.03,0.515, 0.955);
+    -moz-transition:opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, -moz-transform 0.2s cubic-bezier(0.455,0.03,0.515,0.955);
+    transition:opacity 0.2s ease-in-out, visibility 0.2s ease-in-out, transform 0.2s cubic-bezier(0.455,0.03,0.515,0.955);
+    -webkit-transform:translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+    /* background: $darklime none repeat scroll 0 0; */
+    .round-button {
+        top: 50%;
+        left: 50%;
+        width: 150px;
+        height: 40px;
+        overflow: hidden;
+        border: 0px none;
+        padding: 9px 18px;
+        text-align: center;
+        position: absolute;
+        margin-top: -20px;
+        margin-left: -75px;
+        @include text-md($color: $black);
+        @include border-radius(30px);
+        @include transition(all 0.3s ease-in);
+        background: $white none repeat scroll 0 0;
+    }
+}
+
+
+.setting, .responsive-standalone {
+    &-overlay {
+        background: rgba(58, 68, 78, 0.4) none repeat scroll 0 0;
+        display: none;
+        height: 120%;
+        left: 0;
+        max-height: $viewportSize;
+        min-height: $viewportSize;
+        position: fixed;
+        top: 0;
+        width: $viewportSize;
+        z-index: 99;
+    }
+}
